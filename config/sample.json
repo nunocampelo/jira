@@ -1,0 +1,34 @@
+{
+    "jira": {
+        "client": {
+            "protocol": "http|https",
+            "host": "JIRA_API_HOST",
+            "username": "JIRA_USERNAME",
+            "password": "JIRA_PASSWORD",
+            "apiVersion": "2",
+            "strictSSL": false
+        },
+        "query": {
+            "startAt": 0,
+            "maxResults": 200,
+            "validateQuery": true,
+            "fields": null
+        }
+    },
+    "team": {
+        "dailyWorkingHours": 7,
+        "people": [
+            {
+                "tgi": "PERSON_ID",
+                "name": "PERSON_NAME",
+                "allocation": 0.2,
+                "off": 0
+            }
+        ]
+    },
+    "components": {
+        "exclude": [
+            "COMPONENT_NAME"
+        ]
+    }
+}

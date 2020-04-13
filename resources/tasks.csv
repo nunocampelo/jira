@@ -1,0 +1,4 @@
+summary;type;component;epic;assignee;storyPoints;versions;fixVersions;backendSubTasks;frontendSubTasks;requirementSubTasks;stdTestsSubTasks;automationSubTasks;labels
+Task One;Story;;;;-1;;;FALSE;FALSE;FALSE;FALSE;FALSE;UI,QA
+Task Two;TM Task;;;;;;;FALSE;FALSE;FALSE;FALSE;FALSE;SP,QA
+Task Three;TM Task;;;;2;;;FALSE;FALSE;FALSE;FALSE;FALSE;SP,QA

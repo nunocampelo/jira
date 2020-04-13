@@ -1,0 +1,79 @@
+{
+  "name": "jira",
+  "description": "jira api client CLI",
+  "version": "1.0.0",
+  "author": "campelo",
+  "bin": {
+    "jira": "./bin/run"
+  },
+  "bugs": "https://github.com/script/jira/issues",
+  "dependencies": {
+    "@jsincubator/core": "^1.1.0",
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.13.3",
+    "@oclif/plugin-help": "^2.2.1",
+    "@types/inquirer": "^6.5.0",
+    "@types/jira-client": "^6.4.6",
+    "builder-pattern": "^1.2.2",
+    "chalk": "^4.0.0",
+    "cli-table": "^0.3.1",
+    "cli-ux": "^5.3.2",
+    "csv-parser": "^2.3.1",
+    "csvtojson": "^2.0.10",
+    "inquirer": "^7.0.0",
+    "jira-client": "^6.11.0",
+    "neat-csv": "^5.1.0",
+    "ts-interface-checker": "^0.1.9",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.2",
+    "@oclif/tslint": "^3.1.1",
+    "@types/asciichart": "^1.5.0",
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^10.14.18",
+    "asciichart": "^1.5.9",
+    "chai": "^4.2.0",
+    "globby": "^8.0.2",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "rimraf": "^3.0.0",
+    "ts-interface-builder": "^0.2.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/script/jira",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "jira",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "script/jira",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
