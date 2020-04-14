@@ -17,7 +17,8 @@ ${peopleDesc}`
   static flags = {
     help: flags.help({ char: 'h' }),
     people: flags.string({ char: 'p', description: `assignees`, required: false }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   async init() {

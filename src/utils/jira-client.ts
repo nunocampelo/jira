@@ -9,6 +9,7 @@ import { envLoader, configLoader } from '@jsincubator/core'
 envLoader.load(path.resolve(`${__dirname}/../../.env`))
 const jiraClientConfig: any = configLoader.load('jira.client')
 const jiraQueryConfig: any = configLoader.load('jira.query')
+const jiraProjectConfig: any = configLoader.load('jira.project')
 
 const api = new JiraApi(jiraClientConfig)
 
@@ -64,6 +65,7 @@ const getActiveSprints = async (boardId: number): Promise<any> => {
 const getRapidViews = async (): Promise<any> => {
   return api.findRapidView('scopechangeburndownchart')
 }
+
 const getSprints = async (boardId: number, active: boolean = true, future: boolean = false, closed: boolean = false): Promise<any> => {
 
   const sprintStatus = []
@@ -83,8 +85,8 @@ const getSprints = async (boardId: number, active: boolean = true, future: boole
   return api.getAllSprints(boardId, 0, 100, sprintStatus.reduce((acc: string, cur: string) => acc + `,${cur}`, ''))
 }
 
-const addComment = (issue: string, text: string): Promise<any> => {
-  const issueId = `VLBSFI_GDP_AG-${issue}`
+const addComment = (issueNumber: number, text: string): Promise<any> => {
+  const issueId = `${jiraProjectConfig.name}-${issueNumber}`
   return api.addComment(issueId, text)
 }
 
@@ -103,7 +105,7 @@ const getVersions = async (boardId: number): Promise<any> => {
 }
 
 const getComponents = async (): Promise<any> => {
-  return api.listComponents('VLBSFI_GDP_AG')
+  return await api.listComponents(jiraProjectConfig.name)
 }
 
 const getEpics = async (boardId: number): Promise<any> => {
@@ -143,7 +145,7 @@ const _createTask = (request: TaskRequestCreation) => {
           "key": request.parentKey
         },
         "project": {
-          "key": request.project || "VLBSFI_GDP_AG"
+          "key": request.project || jiraProjectConfig.name
         },
         "description": request.description ? request.description.reduce((acc: string, cur: string) => acc + cur + '\n', '') : undefined,
         "customfield_10006": request.epic,
@@ -343,6 +345,12 @@ const _completeTaskRequest = async (parentTask: TaskRequestCreation) => {
 //   Story, SubTask = 'TM SubTask', Task = 'TM Task',
 // }
 
+export interface Component {
+  id: number
+  self: string
+  name: string
+}
+
 export interface Board {
   id: number
   self: string
@@ -416,12 +424,12 @@ export interface JiraClient {
   getSprints(boardId: number, active: boolean, future: boolean, closed: boolean): Promise<any>
   getActiveAndFutureSprints(boardId: number): Promise<any>
   getActiveSprints(boardId: number): Promise<any>
-  addComment(issue: string, text: string): Promise<any>
+  addComment(issueNumber: number, text: string): Promise<any>
   addTask(task: any): Promise<any>
   getRapidViews(): Promise<any>
   updateTask(issueId: string, issue: any): Promise<any>
   getVersions(boardId: number): Promise<any>
-  getComponents(): Promise<any>
+  getComponents(): Promise<Component[]>
   getEpics(boardId: number): Promise<any>
   moveToEpic(epicId: string, issues: any[]): Promise<any>
   moveToSprint(sprintId: string, issueId: string): Promise<any>

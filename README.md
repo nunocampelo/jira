@@ -64,9 +64,9 @@ USAGE
   $ jira comment
 
 OPTIONS
-  -h, --help         show CLI help
-  -i, --issue=issue  (required) issue number
-  -t, --text=text    (required) text
+  -h, --help                     show CLI help
+  -i, --issueNumber=issueNumber  (required) issue number
+  -t, --text=text                (required) text
 ```
 
 _See code: [src\commands\comment.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\comment.ts)_
@@ -241,15 +241,26 @@ OPTIONS
   -a, --assignee=assignee        [default: 8] task assignee
   -b, --backend                  includes backend
   -c, --component=component      component name
-  -d, --description=description  [default: h2. TODO,* See subtasks] task description
+
+  -d, --description=description  [default: h2. TODO,* See subtasks] task description (lines are splitted using the
+                                 delimiter flag)
+
   -e, --epic=epic                epic key
+
   -f, --frontend                 includes frontend
+
   -h, --help                     show CLI help
+
   -l, --delimiter=delimiter      [default: ,] delimiter to split with
+
   -o, --automation               includes UATs
+
   -r, --requirements             includes requirements
+
   -s, --summary=summary          (required) task summary
+
   -t, --tests                    includes SDT tests update
+
   -v, --versions=versions        [default: 1.2.0] version
 
 DESCRIPTION

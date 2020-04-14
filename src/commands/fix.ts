@@ -2,7 +2,7 @@ import { Command, flags } from '@oclif/command'
 
 const path = require('path')
 import { Inquirer, PromptModule, Answers } from 'inquirer'
-import { jiraClient, JiraClient, TaskType } from '../utils/jira-client'
+import { jiraClient, JiraClient, TaskType, Component } from '../utils/jira-client'
 import { Builder, JiraQueryBuilder, Operation } from '../utils/jira-query-builder'
 import JiraCommand from './jira-command'
 import { envLoader, configLoader } from '@jsincubator/core'
@@ -13,14 +13,15 @@ const prompt: PromptModule = inquirer.createPromptModule()
 
 let versions: any[]
 // const components: string[] = ['', 'Alarm Manager', 'Policy Manager', 'Apps Manager', 'Administraton Dashboard', 'App Log Manager', 'Application Monitoring and KPI']
-let components: string[]
-const componentsBlackList: string[] = configLoader.load('components.exclude')
+// let componentNames: string[]
+// const componentsBlackList: string[] = configLoader.load('components.exclude')
 
 export default class Fix extends JiraCommand {
 
   static flags = {
     help: flags.help({ char: 'h' }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   static args = [{ name: 'sprint', required: true }]
@@ -45,7 +46,7 @@ ${JiraCommand.description}`
     versions = (await jiraClient.getVersions(this.getCurrentBoardId())).values
 
     versions.push('')
-    components = (await jiraClient.getComponents()).filter((component: any) => componentsBlackList.indexOf(component.name) === -1)
+    // this.components = this.components.filter((cur: Component) => componentsBlackList.indexOf(cur.name) === -1)
 
     await this.fix(args.sprint.split(','))
   }
@@ -114,7 +115,7 @@ ${JiraCommand.description}`
     }
 
     if (missingComponent) {
-      const componentsAnswer: any = await prompt({ message: `Please choose wanted component`, name: 'component', type: 'rawlist', choices: components.map((component: any) => component.name) })
+      const componentsAnswer: any = await prompt({ message: `Please choose wanted component`, name: 'component', type: 'rawlist', choices: this.components.map((component: any) => component.name) })
       payload.update.components = [{ add: { name: componentsAnswer.component } }]
     }
 

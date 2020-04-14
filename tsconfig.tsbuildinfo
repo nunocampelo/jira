@@ -582,12 +582,12 @@
         "signature": "7140b8805c82c586de623a73531cd35ff1d79ea051c39d56fcbfc17256e840f7"
       },
       "./src/utils/jira-client.ts": {
-        "version": "5860a92968f3cd64359786f060bab5dbb4093b738fd4b3ae2f46fbfdd41abbd7",
-        "signature": "e29c82a8bc6659fa885bd72707bf6a4693739a195360d1b2205f663bda0faf88"
+        "version": "161e25671335a5e2edded98181de1c3a5132459345447768318d1d7ad0e4461e",
+        "signature": "32fa98d129ab20f93cebb4653d7040c4e88bbdcfc9993c55f399448f2e1bbcc7"
       },
       "./src/commands/comment.ts": {
-        "version": "06ce61dded7d388c5d43ad0589851731a61dfeaabfbebb666db2f03b1ae2dedd",
-        "signature": "771550c30fd611b3148b5d8a1f6cc28d71bcc0ced2dc2c8e5dcd425ff6395c5f"
+        "version": "5a426214cfa797b6778d14c8693e93678857e3f75634edbd434d4eba3e21d0dd",
+        "signature": "4df804eb7a84e891af8dea7902fc8f372b2c4f6b61e1da24b39819770fd49033"
       },
       "./node_modules/rxjs/internal/subscription.d.ts": {
         "version": "6cb35d83d21a7e72bd00398c93302749bcd38349d0cc5e76ff3a90c6d1498a4d",
@@ -942,11 +942,11 @@
         "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
       },
       "./src/commands/jira-command.ts": {
-        "version": "b42b85e9ab6257066efc7b54cb90e3e6529af045f54f918d633b8ee261d5bf8d",
-        "signature": "f125e32185ccc7b86713c295ff41b901d3211e64f6abed54fab250bdcc70acac"
+        "version": "489cc82fef67eb729beafeebd7c887d158c4281af88bd2fe2c231f338087b4c9",
+        "signature": "1a016a1462c8862a5c1d901655fa179aa5aafd089a350125f8aece640e896103"
       },
       "./src/commands/fix.ts": {
-        "version": "6c69a7475269860715f4f578a2833cbdac0cf17984e2a10741f03fd9e5932aff",
+        "version": "3837aad8462307cb9afafbbe962c6e337a00c7dd9c982508594e82d984176bf2",
         "signature": "d4ab4c667a7fb46eaf8b12671d24e83e0cd57ed6eb2c17fcb41cb8b27afdd018"
       },
       "./src/utils/csv-parser.ts": {
@@ -962,27 +962,27 @@
         "signature": "2e708456af03c9e4d5ed0d35edae2245dc35ae0db3aedc09f2d6c4a1c7f36c9b"
       },
       "./src/commands/list.ts": {
-        "version": "866e91ee86c3e0e841e2820a2b332ee1c0e2c361ba8a661377ea97de4537b311",
+        "version": "54f9037a90edac5ca380daf3a11b549337f58e63edc5901faffb3cbeb28e17b8",
         "signature": "de9cca703cc5130f24aa251c10e4bdb4c210fbbbacf1903dd9b1bbb6505caa63"
       },
       "./src/commands/logs.ts": {
-        "version": "87bca46093d87d9cd59922e485ab187f0acf49c08ecec97d9689ee6f46cff5bf",
+        "version": "1bd4a5bbac500f835f3aa0138b516b336ad13f69145e475cbcd071a4a2bd57b7",
         "signature": "8b2d5157fe82ba8182a152f0b6c60f4d797a754890b3cd90da89d7e149b1ed6e"
       },
       "./src/commands/move.ts": {
-        "version": "0f154e5c155a0945f4b7878fd8842e4aa9a76b8d69a445ccfd5b6c4257c15a29",
+        "version": "a355e9cd60958db83fb1544d39c404e4a85f2c5b2bf29b9f1faf670b3cfb6dc5",
         "signature": "86a4879275fcee41f784fbc47cf15089785d399359dd72b92c23a9b606b35a07"
       },
       "./src/commands/prog.ts": {
-        "version": "1b5ee54fe6be69c0a8f8d3db4e68d5e69741790dea4697a6ae4303384cc15fbc",
+        "version": "6c6594b2e82e4e00a196cbbb205d32fc9ac825c78f2ceeab98e1b77a64288a0e",
         "signature": "c757514a8b760cdad1c711112ea14a37756305269e8a7f0cbdfb0154be0d5d99"
       },
       "./src/commands/snap.ts": {
-        "version": "12a4c81856fe669c1b404b4e568d49cf371eddd1e9dd87b51219f16c840176de",
+        "version": "e44575ff6ae030d3b8143f14f84aaed3b4c18280d2d161ee22e16546414bcbf6",
         "signature": "a2c4786dbef21f46a008d08c7f17647b6228544ddf80334fec8aeb5e3dd3f2c3"
       },
       "./src/commands/task.ts": {
-        "version": "ca36926c32aa474fec475ef35194482a2edd8d93282596bc966b3b0ccd897e94",
+        "version": "a93edf0e387c6e4390415fa0eca0f495f92e382ce482e20cae4e9ca835b2409d",
         "signature": "4b1bd572232e3d83ee97047a0280a6f60e6ed5b724067b11234237439dcdd277"
       },
       "./node_modules/@types/bluebird/index.d.ts": {
@@ -1030,16 +1030,16 @@
         "signature": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115"
       },
       "./node_modules/@types/tough-cookie/index.d.ts": {
-        "version": "8437256e19bbeda3c9e062d18971002545c486b1f40e3cfa10199c89808264b7",
-        "signature": "8437256e19bbeda3c9e062d18971002545c486b1f40e3cfa10199c89808264b7"
+        "version": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873",
+        "signature": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873"
       },
       "./node_modules/@types/request/index.d.ts": {
-        "version": "5f6ae89a8217fcfc4c313cf99353ab148f0e469026d75cb2319e6b14ee12b63e",
-        "signature": "5f6ae89a8217fcfc4c313cf99353ab148f0e469026d75cb2319e6b14ee12b63e"
+        "version": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098",
+        "signature": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098"
       },
       "./node_modules/@types/jira-client/index.d.ts": {
-        "version": "db7283a3e89e04872107caed88f2617b2514b861baf5cf6c95d65de77e42f04e",
-        "signature": "db7283a3e89e04872107caed88f2617b2514b861baf5cf6c95d65de77e42f04e"
+        "version": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b",
+        "signature": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b"
       },
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": {
         "version": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798",
@@ -2597,6 +2597,7 @@
       "./src/commands/jira-command.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/utils/jira-client.ts",
+        "./node_modules/@jsincubator/core/dist/index.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -4797,7 +4798,20 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
+      "./src/utils/jira-client.ts",
+      "./src/commands/task.ts",
+      "./src/commands/snap.ts",
       "./src/commands/prog.ts",
+      "./src/commands/move.ts",
+      "./src/commands/logs.ts",
+      "./src/commands/list.ts",
+      "./src/commands/import.ts",
+      "./src/commands/fix.ts",
+      "./src/commands/jira-command.ts",
+      "./src/commands/comment.ts",
+      "./node_modules/@types/tough-cookie/index.d.ts",
+      "./node_modules/@types/request/index.d.ts",
+      "./node_modules/@types/jira-client/index.d.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.es2015.d.ts",
       "./node_modules/typescript/lib/lib.es2016.d.ts",
@@ -4943,8 +4957,6 @@
       "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
       "./node_modules/@jsincubator/core/dist/src/index.d.ts",
       "./node_modules/@jsincubator/core/dist/index.d.ts",
-      "./src/utils/jira-client.ts",
-      "./src/commands/comment.ts",
       "./node_modules/rxjs/internal/subscription.d.ts",
       "./node_modules/rxjs/internal/types.d.ts",
       "./node_modules/rxjs/internal/subscriber.d.ts",
@@ -5033,16 +5045,8 @@
       "./node_modules/@types/inquirer/lib/utils/utils.d.ts",
       "./node_modules/@types/inquirer/index.d.ts",
       "./src/utils/jira-query-builder.ts",
-      "./src/commands/jira-command.ts",
-      "./src/commands/fix.ts",
       "./src/utils/csv-parser.ts",
       "./src/constants/team.ts",
-      "./src/commands/import.ts",
-      "./src/commands/list.ts",
-      "./src/commands/logs.ts",
-      "./src/commands/move.ts",
-      "./src/commands/snap.ts",
-      "./src/commands/task.ts",
       "./node_modules/@types/bluebird/index.d.ts",
       "./node_modules/@types/amqplib/properties.d.ts",
       "./node_modules/@types/amqplib/index.d.ts",
@@ -5054,9 +5058,6 @@
       "./node_modules/@types/minimatch/index.d.ts",
       "./node_modules/@types/glob/index.d.ts",
       "./node_modules/@types/request/node_modules/form-data/index.d.ts",
-      "./node_modules/@types/tough-cookie/index.d.ts",
-      "./node_modules/@types/request/index.d.ts",
-      "./node_modules/@types/jira-client/index.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",

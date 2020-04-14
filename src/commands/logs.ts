@@ -1,4 +1,5 @@
 import { Command, flags } from '@oclif/command'
+
 const chalk = require('chalk')
 const Table = require('cli-table')
 
@@ -16,7 +17,8 @@ export default class Logs extends JiraCommand {
     people: flags.string({ char: 'p', description: `assignees`, required: false }),
     status: flags.string({ char: 's', description: `task status`, required: false, options: Object.keys(status) }),
     weekend: flags.boolean({ char: 'w', description: `include weekend days`, required: false }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   static args = [{ name: 'file' }]

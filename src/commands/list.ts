@@ -17,7 +17,8 @@ export default class List extends JiraCommand {
     status: flags.string({ char: 's', description: `task status`, required: false, options: Object.keys(status) }),
     openSprints: flags.boolean({ char: 'o', description: `only open sprints`, required: false }),
     work: flags.string({ char: 'w', description: `sprint name`, required: false }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   async init() {

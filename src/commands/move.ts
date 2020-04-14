@@ -2,13 +2,14 @@ import { Command, flags } from '@oclif/command'
 
 import { jiraClient, JiraClient, TaskType } from '../utils/jira-client'
 import { Builder, JiraQueryBuilder, Operation } from '../utils/jira-query-builder'
-import JiraCommand from './jira-command';
+import JiraCommand from './jira-command'
 
 export default class Move extends JiraCommand {
 
   static flags = {
     help: flags.help({ char: 'h' }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   static args = [{ name: 'sprint', required: true }]
@@ -20,7 +21,7 @@ export default class Move extends JiraCommand {
     Move.description = `move issues from one sprint to another
 ${JiraCommand.description}`
 
-Move.flags = {
+    Move.flags = {
       ...Move.flags,
       ...JiraCommand.flags
     }
@@ -56,7 +57,7 @@ Move.flags = {
       for (let i = 0; i < issues.length; i++) {
 
         const issue = issues[i]
-        await this._moveIssue(response[1].id,issue.key)
+        await this._moveIssue(response[1].id, issue.key)
 
         // const payload: any = {
         //   // update: {sprint: [{add: {id: response[1].id}}]},
@@ -74,7 +75,6 @@ Move.flags = {
 
   _moveIssue = async (sprintId: string, issueId: string) => {
     await jiraClient.moveToSprint(sprintId, issueId).catch((err: any) => {
-      console.log('test')
     })
   }
 }

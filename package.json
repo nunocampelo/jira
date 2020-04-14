@@ -13,7 +13,7 @@
     "@oclif/config": "^1.13.3",
     "@oclif/plugin-help": "^2.2.1",
     "@types/inquirer": "^6.5.0",
-    "@types/jira-client": "^6.4.6",
+    "@types/jira-client": "^6.13.1",
     "builder-pattern": "^1.2.2",
     "chalk": "^4.0.0",
     "cli-table": "^0.3.1",

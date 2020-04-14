@@ -15,7 +15,7 @@ ${peopleDesc}`
     help: flags.help({ char: 'h' }),
     summary: flags.string({ char: 's', description: `task summary`, required: true }),
     assignee: flags.string({ char: 'a', description: `task assignee`, required: false, default: '8' }),
-    description: flags.string({ char: 'd', description: `task description`, required: false, default: 'h2. TODO,* See subtasks' }),
+    description: flags.string({ char: 'd', description: `task description (lines are splitted using the delimiter flag)`, required: false, default: 'h2. TODO,* See subtasks' }),
     component: flags.string({ char: 'c', description: `component name`, required: false }),
     epic: flags.string({ char: 'e', description: `epic key`, required: false }),
     versions: flags.string({ char: 'v', description: `version`, required: false, default: '1.2.0' }),

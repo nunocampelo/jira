@@ -16,7 +16,8 @@ export default class Snap extends JiraCommand {
     work: flags.string({ char: 'w', description: `sprint name`, required: false }),
     future: flags.boolean({ char: 'f', description: `include future sprints`, required: false }),
     people: flags.string({ char: 'p', description: `assignees`, required: false }),
-    boardIndex: flags.string({ char: 'b', required: true })
+    boardIndex: flags.string({ char: 'b', required: true }),
+    // componentIndex: flags.string({ char: 'c', required: false })
   }
 
   // static args = [{ name: 'file' }]
