@@ -1,5 +1,6 @@
 import { request } from 'https'
 const JiraApi = require('jira-client')
+// import * as JiraApi from 'jira-client'
 
 const path = require('path')
 import { Builder } from 'builder-pattern'
@@ -92,6 +93,9 @@ const addComment = (issueNumber: number, text: string): Promise<any> => {
 
 const addTask = async (request: TaskRequestCreation): Promise<any> => {
   _completeTaskRequest(request)
+
+  // console.log(request)
+
   const parentTask = await _createTask(request)
   return _createSubTasks(parentTask.key, request)
 }
@@ -163,6 +167,8 @@ const _createTask = (request: TaskRequestCreation) => {
       name: request.assignee
     }
   }
+
+  console.log(task)
 
   const taskCreationPromise: Promise<any> = api.addNewIssue(task)
 

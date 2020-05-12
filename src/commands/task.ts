@@ -48,7 +48,7 @@ ${peopleDesc}`
     const delimiter: string = flags.delimiter
 
     const taskRequestCreationTemplate: TaskRequestCreation = {
-      summary: flags.component ? `${flags.component} | ${flags.summary}` : flags.summary,
+      summary: flags.summary,
       assignee: people[flags.assignee].tgi,
       description: flags.description.split(delimiter),
       componentName: flags.component,
@@ -65,7 +65,7 @@ ${peopleDesc}`
       storyPoints: -1
     }
 
-    // console.log(taskRequestCreationTemplate)
+    console.log(taskRequestCreationTemplate)
     const parentTaskRequestCreation: TaskRequestCreation = Builder(taskRequestCreationTemplate).build()
     await jiraClient.addTask(parentTaskRequestCreation)
   }

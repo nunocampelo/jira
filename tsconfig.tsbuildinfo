@@ -213,6 +213,10 @@
         "version": "dd87e3a5772687b7cceac3501fcfd762fbab96f3256770155bc3c6f93a2a24e9",
         "signature": "e5b102095ea92ddecdf8e9a7c589c856b5d449ff0b9232ec8b4020e43fc984f6"
       },
+      "./src/utils/csv-parser.ts": {
+        "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
+        "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
+      },
       "./node_modules/builder-pattern/dist/src/builder.d.ts": {
         "version": "e912bd400353ae732c29cdc05502712a0a673364379fa26605198aeb81144491",
         "signature": "e912bd400353ae732c29cdc05502712a0a673364379fa26605198aeb81144491"
@@ -582,12 +586,68 @@
         "signature": "7140b8805c82c586de623a73531cd35ff1d79ea051c39d56fcbfc17256e840f7"
       },
       "./src/utils/jira-client.ts": {
-        "version": "161e25671335a5e2edded98181de1c3a5132459345447768318d1d7ad0e4461e",
+        "version": "b81fc91930ac20419827e200fe4c771ba2c9208cadae6ecfedb1d260657a62ef",
         "signature": "32fa98d129ab20f93cebb4653d7040c4e88bbdcfc9993c55f399448f2e1bbcc7"
       },
-      "./src/commands/comment.ts": {
-        "version": "5a426214cfa797b6778d14c8693e93678857e3f75634edbd434d4eba3e21d0dd",
-        "signature": "4df804eb7a84e891af8dea7902fc8f372b2c4f6b61e1da24b39819770fd49033"
+      "./src/constants/team.ts": {
+        "version": "21de758db9cf32cbe1e579cc0b900ae1b242ddcab9be10f89183cec617b92623",
+        "signature": "9d6479f681adb4d81874718ef9c1fbf0035b11807942424b0980972821eba0fd"
+      },
+      "./src/commands/import.ts": {
+        "version": "8dee6fa884a800a97a75d1b34358bfcb0a5bc454043583bab7333bb2da7f5bd2",
+        "signature": "2e708456af03c9e4d5ed0d35edae2245dc35ae0db3aedc09f2d6c4a1c7f36c9b"
+      },
+      "./src/commands/jira-command.ts": {
+        "version": "489cc82fef67eb729beafeebd7c887d158c4281af88bd2fe2c231f338087b4c9",
+        "signature": "1a016a1462c8862a5c1d901655fa179aa5aafd089a350125f8aece640e896103"
+      },
+      "./src/utils/jira-query-builder.ts": {
+        "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
+        "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
+      },
+      "./src/commands/task.ts": {
+        "version": "a93edf0e387c6e4390415fa0eca0f495f92e382ce482e20cae4e9ca835b2409d",
+        "signature": "4b1bd572232e3d83ee97047a0280a6f60e6ed5b724067b11234237439dcdd277"
+      },
+      "./node_modules/@types/bluebird/index.d.ts": {
+        "version": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5",
+        "signature": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5"
+      },
+      "./node_modules/@types/amqplib/properties.d.ts": {
+        "version": "f5fd92915a5b9ca9ce6ed0a526aa4038896eb32599e4ae640c74170150a140bf",
+        "signature": "f5fd92915a5b9ca9ce6ed0a526aa4038896eb32599e4ae640c74170150a140bf"
+      },
+      "./node_modules/@types/amqplib/index.d.ts": {
+        "version": "042193a6e2b5ade8b998d913d934ac9037d6ed1110c6fc6de9b86f0414f840ef",
+        "signature": "042193a6e2b5ade8b998d913d934ac9037d6ed1110c6fc6de9b86f0414f840ef"
+      },
+      "./node_modules/@types/asciichart/index.d.ts": {
+        "version": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3",
+        "signature": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3"
+      },
+      "./node_modules/@types/caseless/index.d.ts": {
+        "version": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28",
+        "signature": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28"
+      },
+      "./node_modules/@types/chai/index.d.ts": {
+        "version": "0a534de2e8e1b76641c091f58fda5b8955f0e3b9df67ceae097d94dfe95c5f67",
+        "signature": "0a534de2e8e1b76641c091f58fda5b8955f0e3b9df67ceae097d94dfe95c5f67"
+      },
+      "./node_modules/@types/child-process-promise/index.d.ts": {
+        "version": "57a8223e715ae455cbd8324b54458c1da1065471b73d0278ba9d5b29541d602b",
+        "signature": "57a8223e715ae455cbd8324b54458c1da1065471b73d0278ba9d5b29541d602b"
+      },
+      "./node_modules/@types/color-name/index.d.ts": {
+        "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
+        "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e"
+      },
+      "./node_modules/@types/minimatch/index.d.ts": {
+        "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
+        "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633"
+      },
+      "./node_modules/@types/glob/index.d.ts": {
+        "version": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee",
+        "signature": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee"
       },
       "./node_modules/rxjs/internal/subscription.d.ts": {
         "version": "6cb35d83d21a7e72bd00398c93302749bcd38349d0cc5e76ff3a90c6d1498a4d",
@@ -937,94 +997,6 @@
         "version": "2cd9edbb4a6411a9f5258237dd73323db978d7aa9ebf1d1b0ac79771ac233e24",
         "signature": "2cd9edbb4a6411a9f5258237dd73323db978d7aa9ebf1d1b0ac79771ac233e24"
       },
-      "./src/utils/jira-query-builder.ts": {
-        "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
-        "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
-      },
-      "./src/commands/jira-command.ts": {
-        "version": "489cc82fef67eb729beafeebd7c887d158c4281af88bd2fe2c231f338087b4c9",
-        "signature": "1a016a1462c8862a5c1d901655fa179aa5aafd089a350125f8aece640e896103"
-      },
-      "./src/commands/fix.ts": {
-        "version": "3837aad8462307cb9afafbbe962c6e337a00c7dd9c982508594e82d984176bf2",
-        "signature": "d4ab4c667a7fb46eaf8b12671d24e83e0cd57ed6eb2c17fcb41cb8b27afdd018"
-      },
-      "./src/utils/csv-parser.ts": {
-        "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
-        "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
-      },
-      "./src/constants/team.ts": {
-        "version": "21de758db9cf32cbe1e579cc0b900ae1b242ddcab9be10f89183cec617b92623",
-        "signature": "9d6479f681adb4d81874718ef9c1fbf0035b11807942424b0980972821eba0fd"
-      },
-      "./src/commands/import.ts": {
-        "version": "4715408a710f327af096d262ed4aeac383c6a027a4542907e15908b5e636eb6f",
-        "signature": "2e708456af03c9e4d5ed0d35edae2245dc35ae0db3aedc09f2d6c4a1c7f36c9b"
-      },
-      "./src/commands/list.ts": {
-        "version": "54f9037a90edac5ca380daf3a11b549337f58e63edc5901faffb3cbeb28e17b8",
-        "signature": "de9cca703cc5130f24aa251c10e4bdb4c210fbbbacf1903dd9b1bbb6505caa63"
-      },
-      "./src/commands/logs.ts": {
-        "version": "1bd4a5bbac500f835f3aa0138b516b336ad13f69145e475cbcd071a4a2bd57b7",
-        "signature": "8b2d5157fe82ba8182a152f0b6c60f4d797a754890b3cd90da89d7e149b1ed6e"
-      },
-      "./src/commands/move.ts": {
-        "version": "a355e9cd60958db83fb1544d39c404e4a85f2c5b2bf29b9f1faf670b3cfb6dc5",
-        "signature": "86a4879275fcee41f784fbc47cf15089785d399359dd72b92c23a9b606b35a07"
-      },
-      "./src/commands/prog.ts": {
-        "version": "6c6594b2e82e4e00a196cbbb205d32fc9ac825c78f2ceeab98e1b77a64288a0e",
-        "signature": "c757514a8b760cdad1c711112ea14a37756305269e8a7f0cbdfb0154be0d5d99"
-      },
-      "./src/commands/snap.ts": {
-        "version": "e44575ff6ae030d3b8143f14f84aaed3b4c18280d2d161ee22e16546414bcbf6",
-        "signature": "a2c4786dbef21f46a008d08c7f17647b6228544ddf80334fec8aeb5e3dd3f2c3"
-      },
-      "./src/commands/task.ts": {
-        "version": "a93edf0e387c6e4390415fa0eca0f495f92e382ce482e20cae4e9ca835b2409d",
-        "signature": "4b1bd572232e3d83ee97047a0280a6f60e6ed5b724067b11234237439dcdd277"
-      },
-      "./node_modules/@types/bluebird/index.d.ts": {
-        "version": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5",
-        "signature": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5"
-      },
-      "./node_modules/@types/amqplib/properties.d.ts": {
-        "version": "f5fd92915a5b9ca9ce6ed0a526aa4038896eb32599e4ae640c74170150a140bf",
-        "signature": "f5fd92915a5b9ca9ce6ed0a526aa4038896eb32599e4ae640c74170150a140bf"
-      },
-      "./node_modules/@types/amqplib/index.d.ts": {
-        "version": "042193a6e2b5ade8b998d913d934ac9037d6ed1110c6fc6de9b86f0414f840ef",
-        "signature": "042193a6e2b5ade8b998d913d934ac9037d6ed1110c6fc6de9b86f0414f840ef"
-      },
-      "./node_modules/@types/asciichart/index.d.ts": {
-        "version": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3",
-        "signature": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3"
-      },
-      "./node_modules/@types/caseless/index.d.ts": {
-        "version": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28",
-        "signature": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28"
-      },
-      "./node_modules/@types/chai/index.d.ts": {
-        "version": "0a534de2e8e1b76641c091f58fda5b8955f0e3b9df67ceae097d94dfe95c5f67",
-        "signature": "0a534de2e8e1b76641c091f58fda5b8955f0e3b9df67ceae097d94dfe95c5f67"
-      },
-      "./node_modules/@types/child-process-promise/index.d.ts": {
-        "version": "57a8223e715ae455cbd8324b54458c1da1065471b73d0278ba9d5b29541d602b",
-        "signature": "57a8223e715ae455cbd8324b54458c1da1065471b73d0278ba9d5b29541d602b"
-      },
-      "./node_modules/@types/color-name/index.d.ts": {
-        "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
-        "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e"
-      },
-      "./node_modules/@types/minimatch/index.d.ts": {
-        "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
-        "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633"
-      },
-      "./node_modules/@types/glob/index.d.ts": {
-        "version": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee",
-        "signature": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee"
-      },
       "./node_modules/@types/request/node_modules/form-data/index.d.ts": {
         "version": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115",
         "signature": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115"
@@ -1372,6 +1344,10 @@
       ],
       "./src/index.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/utils/csv-parser.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1966,9 +1942,85 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/commands/comment.ts": [
+      "./src/constants/team.ts": [
+        "./node_modules/@jsincubator/core/dist/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/commands/import.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts",
+        "./src/utils/csv-parser.ts",
+        "./src/utils/jira-client.ts",
+        "./src/constants/team.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/commands/jira-command.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/utils/jira-client.ts",
+        "./node_modules/@jsincubator/core/dist/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/utils/jira-query-builder.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/commands/task.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts",
+        "./node_modules/builder-pattern/dist/src/index.d.ts",
+        "./src/constants/team.ts",
+        "./src/utils/jira-query-builder.ts",
+        "./src/utils/jira-client.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/bluebird/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/amqplib/properties.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/amqplib/index.d.ts": [
+        "./node_modules/@types/bluebird/index.d.ts",
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/amqplib/properties.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/asciichart/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/caseless/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/chai/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/child-process-promise/index.d.ts": [
+        "./node_modules/@types/node/child_process.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/color-name/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/minimatch/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/glob/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/minimatch/index.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2587,149 +2639,6 @@
         "./node_modules/@types/inquirer/lib/utils/readline.d.ts",
         "./node_modules/@types/inquirer/lib/utils/screen-manager.d.ts",
         "./node_modules/@types/inquirer/lib/utils/utils.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/utils/jira-query-builder.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/jira-command.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/utils/jira-client.ts",
-        "./node_modules/@jsincubator/core/dist/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/fix.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./node_modules/@types/inquirer/index.d.ts",
-        "./src/utils/jira-client.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@jsincubator/core/dist/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/utils/csv-parser.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/constants/team.ts": [
-        "./node_modules/@jsincubator/core/dist/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/import.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/utils/csv-parser.ts",
-        "./src/utils/jira-client.ts",
-        "./src/constants/team.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/list.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/constants/team.ts",
-        "./src/constants/jira.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/utils/jira-client.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/logs.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/constants/jira.ts",
-        "./src/constants/team.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/utils/jira-client.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/move.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/utils/jira-client.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/prog.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/constants/team.ts",
-        "./src/constants/jira.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/utils/jira-client.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/snap.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/constants/team.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/utils/jira-client.ts",
-        "./src/commands/jira-command.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/task.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./node_modules/builder-pattern/dist/src/index.d.ts",
-        "./src/constants/team.ts",
-        "./src/utils/jira-query-builder.ts",
-        "./src/utils/jira-client.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/bluebird/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/amqplib/properties.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/amqplib/index.d.ts": [
-        "./node_modules/@types/bluebird/index.d.ts",
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/amqplib/properties.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/asciichart/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/caseless/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/chai/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/child-process-promise/index.d.ts": [
-        "./node_modules/@types/node/child_process.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/color-name/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/minimatch/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/glob/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/minimatch/index.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3824,9 +3733,62 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/commands/comment.ts": [
+      "./src/commands/import.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
         "./node_modules/@oclif/command/lib/index.d.ts"
+      ],
+      "./src/commands/jira-command.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts",
+        "./src/utils/jira-client.ts"
+      ],
+      "./node_modules/@types/bluebird/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/amqplib/properties.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/amqplib/index.d.ts": [
+        "./node_modules/@types/bluebird/index.d.ts",
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/amqplib/properties.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/asciichart/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/caseless/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/chai/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/child-process-promise/index.d.ts": [
+        "./node_modules/@types/node/child_process.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/color-name/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/minimatch/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/glob/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/minimatch/index.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./node_modules/rxjs/internal/subscription.d.ts": [
         "./node_modules/rxjs/internal/types.d.ts",
@@ -4446,97 +4408,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/commands/jira-command.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/utils/jira-client.ts"
-      ],
-      "./src/commands/fix.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/import.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts"
-      ],
-      "./src/commands/list.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/logs.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/move.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/prog.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/snap.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
-      ],
-      "./src/commands/task.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts"
-      ],
-      "./node_modules/@types/bluebird/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/amqplib/properties.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/amqplib/index.d.ts": [
-        "./node_modules/@types/bluebird/index.d.ts",
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/amqplib/properties.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/asciichart/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/caseless/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/chai/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/child-process-promise/index.d.ts": [
-        "./node_modules/@types/node/child_process.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/color-name/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/minimatch/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/glob/index.d.ts": [
-        "./node_modules/@types/node/events.d.ts",
-        "./node_modules/@types/minimatch/index.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./node_modules/@types/request/node_modules/form-data/index.d.ts": [
         "./node_modules/@types/node/stream.d.ts",
         "./node_modules/@types/node/http.d.ts",
@@ -4795,23 +4666,16 @@
       "./node_modules/@types/sinon/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/commands/task.ts": [
+        "./node_modules/@oclif/parser/lib/flags.d.ts",
+        "./node_modules/@oclif/command/lib/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
       "./src/utils/jira-client.ts",
-      "./src/commands/task.ts",
-      "./src/commands/snap.ts",
-      "./src/commands/prog.ts",
-      "./src/commands/move.ts",
-      "./src/commands/logs.ts",
-      "./src/commands/list.ts",
       "./src/commands/import.ts",
-      "./src/commands/fix.ts",
-      "./src/commands/jira-command.ts",
-      "./src/commands/comment.ts",
-      "./node_modules/@types/tough-cookie/index.d.ts",
-      "./node_modules/@types/request/index.d.ts",
-      "./node_modules/@types/jira-client/index.d.ts",
+      "./src/commands/task.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.es2015.d.ts",
       "./node_modules/typescript/lib/lib.es2016.d.ts",
@@ -4865,6 +4729,7 @@
       "./node_modules/@oclif/command/lib/main.d.ts",
       "./node_modules/@oclif/command/lib/index.d.ts",
       "./src/index.ts",
+      "./src/utils/csv-parser.ts",
       "./node_modules/builder-pattern/dist/src/builder.d.ts",
       "./node_modules/builder-pattern/dist/src/index.d.ts",
       "./src/constants/jira.ts",
@@ -4957,6 +4822,19 @@
       "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
       "./node_modules/@jsincubator/core/dist/src/index.d.ts",
       "./node_modules/@jsincubator/core/dist/index.d.ts",
+      "./src/constants/team.ts",
+      "./src/commands/jira-command.ts",
+      "./src/utils/jira-query-builder.ts",
+      "./node_modules/@types/bluebird/index.d.ts",
+      "./node_modules/@types/amqplib/properties.d.ts",
+      "./node_modules/@types/amqplib/index.d.ts",
+      "./node_modules/@types/asciichart/index.d.ts",
+      "./node_modules/@types/caseless/index.d.ts",
+      "./node_modules/@types/chai/index.d.ts",
+      "./node_modules/@types/child-process-promise/index.d.ts",
+      "./node_modules/@types/color-name/index.d.ts",
+      "./node_modules/@types/minimatch/index.d.ts",
+      "./node_modules/@types/glob/index.d.ts",
       "./node_modules/rxjs/internal/subscription.d.ts",
       "./node_modules/rxjs/internal/types.d.ts",
       "./node_modules/rxjs/internal/subscriber.d.ts",
@@ -5044,20 +4922,10 @@
       "./node_modules/@types/inquirer/lib/utils/readline.d.ts",
       "./node_modules/@types/inquirer/lib/utils/utils.d.ts",
       "./node_modules/@types/inquirer/index.d.ts",
-      "./src/utils/jira-query-builder.ts",
-      "./src/utils/csv-parser.ts",
-      "./src/constants/team.ts",
-      "./node_modules/@types/bluebird/index.d.ts",
-      "./node_modules/@types/amqplib/properties.d.ts",
-      "./node_modules/@types/amqplib/index.d.ts",
-      "./node_modules/@types/asciichart/index.d.ts",
-      "./node_modules/@types/caseless/index.d.ts",
-      "./node_modules/@types/chai/index.d.ts",
-      "./node_modules/@types/child-process-promise/index.d.ts",
-      "./node_modules/@types/color-name/index.d.ts",
-      "./node_modules/@types/minimatch/index.d.ts",
-      "./node_modules/@types/glob/index.d.ts",
       "./node_modules/@types/request/node_modules/form-data/index.d.ts",
+      "./node_modules/@types/tough-cookie/index.d.ts",
+      "./node_modules/@types/request/index.d.ts",
+      "./node_modules/@types/jira-client/index.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",

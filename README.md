@@ -43,46 +43,10 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`jira comment`](#jira-comment)
-* [`jira fix SPRINT`](#jira-fix-sprint)
 * [`jira help [COMMAND]`](#jira-help-command)
 * [`jira import`](#jira-import)
 * [`jira jira-command`](#jira-jira-command)
-* [`jira list`](#jira-list)
-* [`jira logs [FILE]`](#jira-logs-file)
-* [`jira move SPRINT`](#jira-move-sprint)
-* [`jira prog`](#jira-prog)
-* [`jira snap`](#jira-snap)
 * [`jira task`](#jira-task)
-
-## `jira comment`
-
-manage comments
-
-```
-USAGE
-  $ jira comment
-
-OPTIONS
-  -h, --help                     show CLI help
-  -i, --issueNumber=issueNumber  (required) issue number
-  -t, --text=text                (required) text
-```
-
-_See code: [src\commands\comment.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\comment.ts)_
-
-## `jira fix SPRINT`
-
-```
-USAGE
-  $ jira fix SPRINT
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-```
-
-_See code: [src\commands\fix.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\fix.ts)_
 
 ## `jira help [COMMAND]`
 
@@ -110,10 +74,10 @@ USAGE
   $ jira import
 
 OPTIONS
-  -d, --delimiter=delimiter        [default: ,] field delimiter
+  -d, --delimiter=delimiter        [default: ;] inside field value delimiter
   -f, --file=file                  (required) csv file path to import
   -h, --help                       show CLI help
-  -r, --rowDelimiter=rowDelimiter  [default: ;] csv row delimiter
+  -r, --rowDelimiter=rowDelimiter  [default: ,] csv fields delimiter
 ```
 
 _See code: [src\commands\import.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\import.ts)_
@@ -129,105 +93,6 @@ OPTIONS
 ```
 
 _See code: [src\commands\jira-command.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\jira-command.ts)_
-
-## `jira list`
-
-```
-USAGE
-  $ jira list
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-  -o, --openSprints            only open sprints
-  -p, --people=people          assignee
-  -s, --status=0|1|2|3|4       task status
-  -w, --work=work              sprint name
-```
-
-_See code: [src\commands\list.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\list.ts)_
-
-## `jira logs [FILE]`
-
-```
-USAGE
-  $ jira logs [FILE]
-
-OPTIONS
-  -b, --begin=begin            (required) [default: 6] number of days ago to begin (max 6 days)
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-  -p, --people=people          assignees
-  -s, --status=0|1|2|3|4       task status
-  -w, --weekend                include weekend days
-```
-
-_See code: [src\commands\logs.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\logs.ts)_
-
-## `jira move SPRINT`
-
-```
-USAGE
-  $ jira move SPRINT
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-```
-
-_See code: [src\commands\move.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\move.ts)_
-
-## `jira prog`
-
-People flag description
-
-```
-USAGE
-  $ jira prog
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-  -p, --people=people          assignees
-
-DESCRIPTION
-  People flag description
-  0 => Samuel Ferreira 
-  ,1 => Andre Veiga 
-  ,2 => Joana Dias 
-  ,3 => David Nascimento 
-  ,4 => Nuno Rodrigues 
-  ,5 => David Morais 
-  ,6 => Pedro Rainho 
-  ,7 => Victor Pinheiro 
-  ,8 => Nuno Campelo 
-  ,9 => Miguel Oliveira 
-  ,10 => Telmo Francisco 
-  ,11 => Thales Santos 
-  ,12 => Josenildo Neves 
-  ,13 => David Raposo 
-  ,14 => Ivone Leite 
-  ,15 => Diogo Prata
-```
-
-_See code: [src\commands\prog.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\prog.ts)_
-
-## `jira snap`
-
-```
-USAGE
-  $ jira snap
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -f, --future                 include future sprints
-  -h, --help                   show CLI help
-  -p, --people=people          assignees
-  -r, --remaining=remaining    (required) remaining available sprint time (in hours)
-  -w, --work=work              sprint name
-```
-
-_See code: [src\commands\snap.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\snap.ts)_
 
 ## `jira task`
 

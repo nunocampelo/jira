@@ -2,18 +2,36 @@ import { Command, flags } from '@oclif/command'
 import { csvParser } from '../utils/csv-parser'
 import { jiraClient, TaskRequestCreation, TaskType } from '../utils/jira-client'
 import { getTGIByJiraName } from '../constants/team'
+import JiraCommand from './jira-command'
 
-export default class Import extends Command {
+export default class Import extends JiraCommand {
   static description = 'import tasks from csv'
 
   static flags = {
     help: flags.help({ char: 'h' }),
     file: flags.string({ char: 'f', description: `csv file path to import`, required: true }),
-    rowDelimiter: flags.string({ char: 'r', description: `csv row delimiter`, required: false, default: ';' }),
-    delimiter: flags.string({ char: 'd', description: `field delimiter`, required: false, default: ',' })
+    rowDelimiter: flags.string({ char: 'r', description: `csv fields delimiter`, required: false, default: ',' }),
+    delimiter: flags.string({ char: 'd', description: `inside field value delimiter`, required: false, default: ',' }),
+    // boardIndex: flags.string({ char: 'b', required: false, default:'4' }),
   }
 
   // static args = [{ name: 'file' }]
+
+  async init() {
+
+    await super.init()
+
+    Import.description = `import tasks from csv
+
+${this.boards.description}
+
+${this.components.description}`
+
+    // Import.flags = {
+    //   ...Import.flags,
+    //   ...JiraCommand.flags
+    // }
+  }
 
   async run() {
     const { args, flags } = this.parse(Import)
@@ -29,11 +47,6 @@ export default class Import extends Command {
         fixVersions: el.fixVersions ? el.fixVersions.split(delimiter) : [],
         labels: el.labels ? el.labels.split(delimiter) : [],
         assignee: el.assignee ? getTGIByJiraName(el.assignee) : '',
-        backendSubTasks: el.backendSubTasks === 'TRUE',
-        frontendSubTasks: el.frontendSubTasks === 'TRUE',
-        stdTestsSubTasks: el.stdTestsSubTasks === 'TRUE',
-        automationSubTasks: el.automationSubTasks === 'TRUE',
-        requirementSubTasks: el.requirementSubTasks === 'TRUE',
         storyPoints: el.storyPoints === '' ? undefined : +el.storyPoints
       }
     })
@@ -42,7 +55,6 @@ export default class Import extends Command {
       const task: any = tasks[index]
       await jiraClient.addTask(task)
     }
-    // Promise.all(tasks.map((task: any) => jiraClient.addTask(task)))
   }
 }
 

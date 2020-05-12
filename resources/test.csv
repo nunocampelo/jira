@@ -1,2 +1,0 @@
-summary;type;component;epic;assignee;storyPoints;versions;fixVersions;backendSubTasks;frontendSubTasks;requirementSubTasks;stdTestsSubTasks;automationSubTasks;labels
-GDP-STD-0102 - USER MANAGEMENT SERVICE IS INTEGRATED WITH AUTHENTICATION SERVICES USING LDAP;Story;;;;;;;FALSE;FALSE;FALSE;FALSE;FALSE;user_manager,test_execution
