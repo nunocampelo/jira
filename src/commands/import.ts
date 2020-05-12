@@ -1,7 +1,6 @@
 import { Command, flags } from '@oclif/command'
 import { csvParser } from '../utils/csv-parser'
-import { jiraClient, TaskRequestCreation, TaskType } from '../utils/jira-client'
-import { getTGIByJiraName } from '../constants/team'
+import { jiraClient, TaskRequestCreation, TaskType } from '../utils/jira/jira-client'
 import JiraCommand from './jira-command'
 
 export default class Import extends JiraCommand {
@@ -12,10 +11,7 @@ export default class Import extends JiraCommand {
     file: flags.string({ char: 'f', description: `csv file path to import`, required: true }),
     rowDelimiter: flags.string({ char: 'r', description: `csv fields delimiter`, required: false, default: ',' }),
     delimiter: flags.string({ char: 'd', description: `inside field value delimiter`, required: false, default: ',' }),
-    // boardIndex: flags.string({ char: 'b', required: false, default:'4' }),
   }
-
-  // static args = [{ name: 'file' }]
 
   async init() {
 
@@ -23,14 +19,12 @@ export default class Import extends JiraCommand {
 
     Import.description = `import tasks from csv
 
-${this.boards.description}
+Components:
+${this.components.data.map((cur: any, index: number) => `${cur.name}\n`)}
 
-${this.components.description}`
+People:
+${this.people.data.map((cur: any, index: number) => `${cur.name}\n`)}`
 
-    // Import.flags = {
-    //   ...Import.flags,
-    //   ...JiraCommand.flags
-    // }
   }
 
   async run() {
@@ -46,7 +40,7 @@ ${this.components.description}`
         versions: el.versions ? el.versions.split(delimiter) : [],
         fixVersions: el.fixVersions ? el.fixVersions.split(delimiter) : [],
         labels: el.labels ? el.labels.split(delimiter) : [],
-        assignee: el.assignee ? getTGIByJiraName(el.assignee) : '',
+        assignee: el.assignee || '',
         storyPoints: el.storyPoints === '' ? undefined : +el.storyPoints
       }
     })

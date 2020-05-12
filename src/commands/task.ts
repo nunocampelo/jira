@@ -1,20 +1,16 @@
 import { Command, flags } from '@oclif/command'
 import { Builder } from 'builder-pattern'
 
-import { people, peopleDesc } from '../constants/team'
-import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../utils/jira-query-builder'
-import { jiraClient, JiraClient, TaskRequestCreation, SubTaskRequestCreation, TaskType } from '../utils/jira-client'
+import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../utils/jira/jira-query-builder'
+import { jiraClient, JiraClient, TaskRequestCreation, SubTaskRequestCreation, TaskType } from '../utils/jira/jira-client'
 
 export default class Task extends Command {
-  static description = `task creation
-  
-People flag description
-${peopleDesc}`
+  static description = `task creation`
 
   static flags = {
     help: flags.help({ char: 'h' }),
     summary: flags.string({ char: 's', description: `task summary`, required: true }),
-    assignee: flags.string({ char: 'a', description: `task assignee`, required: false, default: '8' }),
+    assignee: flags.string({ char: 'a', description: `task assignee`, required: false, default: '' }),
     description: flags.string({ char: 'd', description: `task description (lines are splitted using the delimiter flag)`, required: false, default: 'h2. TODO,* See subtasks' }),
     component: flags.string({ char: 'c', description: `component name`, required: false }),
     epic: flags.string({ char: 'e', description: `epic key`, required: false }),
@@ -49,7 +45,7 @@ ${peopleDesc}`
 
     const taskRequestCreationTemplate: TaskRequestCreation = {
       summary: flags.summary,
-      assignee: people[flags.assignee].tgi,
+      assignee: flags.assignee,
       description: flags.description.split(delimiter),
       componentName: flags.component,
       labels: [],
@@ -65,7 +61,6 @@ ${peopleDesc}`
       storyPoints: -1
     }
 
-    console.log(taskRequestCreationTemplate)
     const parentTaskRequestCreation: TaskRequestCreation = Builder(taskRequestCreationTemplate).build()
     await jiraClient.addTask(parentTaskRequestCreation)
   }

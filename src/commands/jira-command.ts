@@ -1,19 +1,12 @@
 import { Command, flags } from '@oclif/command'
 
 const path = require('path')
-import { jiraClient, JiraClient, Board, Component } from '../utils/jira-client'
-import { envLoader, configLoader } from '@jsincubator/core'
+import { jiraClient, JiraClient, Board, Component } from '../utils/jira/jira-client'
+import config from '../config/thales'
 
-envLoader.load(path.resolve(`${__dirname}/../../.env`))
-const excludedComponentsNames: string[] = configLoader.load('components.exclude')
+const excludedComponentsNames: string[] = config.components.exclude
 
-export interface Boards {
-    data: Board[],
-    flag: any,
-    description: string
-}
-
-export interface Components {
+export interface Feature {
     data: any[],
     flag: any,
     description: string
@@ -21,34 +14,27 @@ export interface Components {
 
 export default abstract class JiraCommand extends Command {
 
-    // data: any = {
-    //     components: '',
-    //     boards: ''
-    // }
-    // static description: string
-    // static componentsDescription: string
-    // static boardDescription: string
-
-    // static flags = {
-    //     boardIndex: flags.string({ char: 'b', required: true }),
-    //     // componentIndex: flags.string({ char: 'c', required: false })
-    // }
-
-
-    boards: Boards;
-    components: Components;
+    boards: Feature = {
+        data: [],
+        flag: '',
+        description: '' 
+    };
+    components: Feature = {
+        data: [],
+        flag: '',
+        description: '' 
+    };
+    people: Feature = {
+        data: [],
+        flag: '',
+        description: '' 
+    };
 
     async init() {
 
         super.init()
         await this._initData()
-
-        // await this._complementFlags()
-        // await this._complementDescription()
     }
-
-    // getCurrentBoard = (): Board => this.boards[+JiraCommand.flags.boardIndex]
-    // getCurrentBoardId = () => this.getCurrentBoard().id
 
     _initData = async () => {
 
@@ -56,6 +42,7 @@ export default abstract class JiraCommand extends Command {
 
         const boardData: Board[] = results[0] 
         const componentsData: any[] = results[1]
+        const peopleData: any[] = config.team.people
         
         const defaultBoardIndex: string = boardData.reduce((acc: string, cur: Board, index: number) => {
 
@@ -80,36 +67,14 @@ ${boardData.map((cur: Board, index: number) => `${index} => ${cur.name}\n`)}`
             data: componentsData,
             flag: flags.string({ char: 'c', description: `components index`, options: Object.keys(componentsData) }),
             description: `Components:
-${componentsData.map((cur: Component, index: number) => `${cur.name}\n`)}`
+${componentsData.map((cur: Component, index: number) => `${index} => ${cur.name}\n`)}`
         }
-        // this.components = results[1].filter((cur: Component) => excludedComponentsNames.indexOf(cur.name) === -1)
+
+        this.people = {
+            data: peopleData,
+            flag: flags.string({ char: 'b', description: `board index`, options: peopleData.map((cur: any) => cur.tgi), default: peopleData[0].tgi}), 
+            description: `People:
+${peopleData.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}`
+        }
     }
-
-    // _complementFlags = async () => {
-
-    //     // const defaultBoardIndex: string = this.boards.reduce((acc: string, cur: Board, index: number) => {
-
-    //     //     if (!acc) {
-
-    //     //         if (cur.name.toLowerCase().indexOf('team a') !== -1) {
-    //     //             acc += index
-    //     //         }
-    //     //     }
-
-    //     //     return acc
-    //     // }, '')
-
-    //     // JiraCommand.flags.boardIndex = flags.string({ char: 'b', description: `board index`, options: Object.keys(this.boards), default: defaultBoardIndex })
-    //     // JiraCommand.flags.componentIndex = flags.string({ char: 'c', description: `components index`, options: Object.keys(this.components) })
-    // }
-
-//     _complementDescription = async () => {
-
-// //         JiraCommand.boardDescription = `Boards Index:
-// // ${this.boards.map((cur: Board, index: number) => `${index} => ${cur.name}\n`)}`
-
-// //         JiraCommand.componentsDescription += `Components:
-// // ${this.components.map((cur: Component, index: number) => `${cur.name}\n`)}`
-
-//     }
 }

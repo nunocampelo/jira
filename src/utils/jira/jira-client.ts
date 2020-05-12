@@ -1,18 +1,15 @@
 import { request } from 'https'
 const JiraApi = require('jira-client')
-// import * as JiraApi from 'jira-client'
 
 const path = require('path')
 import { Builder } from 'builder-pattern'
-import { storyPointsValues } from '../constants/jira'
-import { envLoader, configLoader } from '@jsincubator/core'
 
-envLoader.load(path.resolve(`${__dirname}/../../.env`))
-const jiraClientConfig: any = configLoader.load('jira.client')
-const jiraQueryConfig: any = configLoader.load('jira.query')
-const jiraProjectConfig: any = configLoader.load('jira.project')
+import config from '../../config/thales'
+const api = new JiraApi(config.jira.client)
 
-const api = new JiraApi(jiraClientConfig)
+const jiraProjectConfig = config.jira.project
+const jiraQueryConfig = config.jira.query
+const storyPointsValues: number[] = [0.5,1,2,3,5]
 
 // const jiraConfig = {
 //   boardId: '13',
@@ -22,6 +19,10 @@ const api = new JiraApi(jiraClientConfig)
 //   fields: null
 //   // fields: "changelog,aggregatetimespent,aggregatetimeoriginalestimate,timetracking,creator,components,assignee,description,epic,issuelinks,issuetype,labels,priority,progress,status,subtasks,summary,fixVersions,customfield_9994,customfield_10002"
 // }
+
+const getUsers = async () => {
+ return (await api.getUsersInGroup('jira-users')).values
+}
 
 const getAllBoards = async () => {
   return (await api.getAllBoards()).values
@@ -93,8 +94,6 @@ const addComment = (issueNumber: number, text: string): Promise<any> => {
 
 const addTask = async (request: TaskRequestCreation): Promise<any> => {
   _completeTaskRequest(request)
-
-  // console.log(request)
 
   const parentTask = await _createTask(request)
   return _createSubTasks(parentTask.key, request)
@@ -420,7 +419,8 @@ export const jiraClient: JiraClient = {
   getEpics,
   moveToSprint,
   getAllBoards,
-  getFirstBoardByNameContaining
+  getFirstBoardByNameContaining,
+  getUsers
 }
 
 export interface JiraClient {
@@ -441,4 +441,5 @@ export interface JiraClient {
   moveToSprint(sprintId: string, issueId: string): Promise<any>
   getAllBoards(): Promise<Board[]>
   getFirstBoardByNameContaining(name: string): Promise<Board>
+  getUsers(): Promise<any>
 }

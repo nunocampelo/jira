@@ -74,7 +74,7 @@ USAGE
   $ jira import
 
 OPTIONS
-  -d, --delimiter=delimiter        [default: ;] inside field value delimiter
+  -d, --delimiter=delimiter        [default: ,] inside field value delimiter
   -f, --file=file                  (required) csv file path to import
   -h, --help                       show CLI help
   -r, --rowDelimiter=rowDelimiter  [default: ,] csv fields delimiter
@@ -87,9 +87,6 @@ _See code: [src\commands\import.ts](https://github.com/script/jira/blob/v1.0.0/s
 ```
 USAGE
   $ jira jira-command
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
 ```
 
 _See code: [src\commands\jira-command.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\jira-command.ts)_
@@ -103,7 +100,7 @@ USAGE
   $ jira task
 
 OPTIONS
-  -a, --assignee=assignee        [default: 8] task assignee
+  -a, --assignee=assignee        task assignee
   -b, --backend                  includes backend
   -c, --component=component      component name
 
@@ -127,25 +124,6 @@ OPTIONS
   -t, --tests                    includes SDT tests update
 
   -v, --versions=versions        [default: 1.2.0] version
-
-DESCRIPTION
-  People flag description
-  0 => Samuel Ferreira 
-  ,1 => Andre Veiga 
-  ,2 => Joana Dias 
-  ,3 => David Nascimento 
-  ,4 => Nuno Rodrigues 
-  ,5 => David Morais 
-  ,6 => Pedro Rainho 
-  ,7 => Victor Pinheiro 
-  ,8 => Nuno Campelo 
-  ,9 => Miguel Oliveira 
-  ,10 => Telmo Francisco 
-  ,11 => Thales Santos 
-  ,12 => Josenildo Neves 
-  ,13 => David Raposo 
-  ,14 => Ivone Leite 
-  ,15 => Diogo Prata
 ```
 
 _See code: [src\commands\task.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\task.ts)_
