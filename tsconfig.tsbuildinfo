@@ -213,10 +213,6 @@
         "version": "dd87e3a5772687b7cceac3501fcfd762fbab96f3256770155bc3c6f93a2a24e9",
         "signature": "e5b102095ea92ddecdf8e9a7c589c856b5d449ff0b9232ec8b4020e43fc984f6"
       },
-      "./src/utils/csv-parser.ts": {
-        "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
-        "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
-      },
       "./node_modules/builder-pattern/dist/src/builder.d.ts": {
         "version": "e912bd400353ae732c29cdc05502712a0a673364379fa26605198aeb81144491",
         "signature": "e912bd400353ae732c29cdc05502712a0a673364379fa26605198aeb81144491"
@@ -233,13 +229,17 @@
         "version": "f49b3ff495e3be105fd70ea8b4ed617b23690b6598d0a19c255809404de60aa0",
         "signature": "af01d5e450ffbf75ed3c92bb0754ec714598b258a8a6e6c2156c1e772f18560a"
       },
-      "./src/commands/jira-command.ts": {
+      "./src/abstract/jira-command.ts": {
         "version": "3368cc557f5d323ac72b1e77d2c22d8e070f830a4092c9cfe2cd17704f07f196",
         "signature": "8acce30784bb9c5a9374dbee6f31c86a37ff8e890a263aee15ab721382465d7f"
       },
+      "./src/utils/csv-parser.ts": {
+        "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
+        "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
+      },
       "./src/commands/import.ts": {
-        "version": "1b14528179cb0f1d5a181027878ee35f811afb0eb0191c16be96550429537e94",
-        "signature": "b6072005e68ad4d82e1a0b1ebd9f4e48dcf8314d24eb603362cecd504cc711ca"
+        "version": "ed2fc6154fbeb7fffb4652b169ec08ce1d2ca754c8430a80de2e2e6d14949f02",
+        "signature": "4079556f04da2a7c9abff702c79b04fcb54e7634cf4417dba01f9109962686d5"
       },
       "./src/utils/jira/jira-query-builder.ts": {
         "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
@@ -1231,10 +1231,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/utils/csv-parser.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./node_modules/builder-pattern/dist/src/builder.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
@@ -1255,10 +1251,14 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/commands/jira-command.ts": [
+      "./src/abstract/jira-command.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/utils/jira/jira-client.ts",
         "./src/config/thales.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/utils/csv-parser.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1266,7 +1266,7 @@
         "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/utils/csv-parser.ts",
         "./src/utils/jira/jira-client.ts",
-        "./src/commands/jira-command.ts",
+        "./src/abstract/jira-command.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2899,13 +2899,10 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/commands/jira-command.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts"
-      ],
       "./src/commands/import.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
         "./node_modules/@oclif/command/lib/index.d.ts",
-        "./src/commands/jira-command.ts"
+        "./src/abstract/jira-command.ts"
       ],
       "./src/commands/task.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
@@ -4265,15 +4262,14 @@
       "./node_modules/@types/sinon/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/abstract/jira-command.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "./src/config/thales.ts",
-      "./src/commands/jira-command.ts",
+      "./src/abstract/jira-command.ts",
       "./src/commands/import.ts",
-      "./src/utils/jira/jira-client.ts",
-      "./src/commands/task.ts",
-      "./src/utils/jira/jira-query-builder.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.es2015.d.ts",
       "./node_modules/typescript/lib/lib.es2016.d.ts",
@@ -4327,9 +4323,13 @@
       "./node_modules/@oclif/command/lib/main.d.ts",
       "./node_modules/@oclif/command/lib/index.d.ts",
       "./src/index.ts",
-      "./src/utils/csv-parser.ts",
       "./node_modules/builder-pattern/dist/src/builder.d.ts",
       "./node_modules/builder-pattern/dist/src/index.d.ts",
+      "./src/config/thales.ts",
+      "./src/utils/jira/jira-client.ts",
+      "./src/utils/csv-parser.ts",
+      "./src/utils/jira/jira-query-builder.ts",
+      "./src/commands/task.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",

@@ -45,7 +45,6 @@ USAGE
 <!-- commands -->
 * [`jira help [COMMAND]`](#jira-help-command)
 * [`jira import`](#jira-import)
-* [`jira jira-command`](#jira-jira-command)
 * [`jira task`](#jira-task)
 
 ## `jira help [COMMAND]`
@@ -81,15 +80,6 @@ OPTIONS
 ```
 
 _See code: [src\commands\import.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\import.ts)_
-
-## `jira jira-command`
-
-```
-USAGE
-  $ jira jira-command
-```
-
-_See code: [src\commands\jira-command.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\jira-command.ts)_
 
 ## `jira task`
 

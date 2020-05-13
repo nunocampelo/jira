@@ -20,6 +20,10 @@ const storyPointsValues: number[] = [0.5,1,2,3,5]
 //   // fields: "changelog,aggregatetimespent,aggregatetimeoriginalestimate,timetracking,creator,components,assignee,description,epic,issuelinks,issuetype,labels,priority,progress,status,subtasks,summary,fixVersions,customfield_9994,customfield_10002"
 // }
 
+const getIssueTypes = async () => {
+  return (await api.listIssueTypes()).map((cur: any) => cur.name);
+}
+
 const getUsers = async () => {
  return (await api.getUsersInGroup('jira-users')).values
 }
@@ -420,7 +424,8 @@ export const jiraClient: JiraClient = {
   moveToSprint,
   getAllBoards,
   getFirstBoardByNameContaining,
-  getUsers
+  getUsers,
+  getIssueTypes
 }
 
 export interface JiraClient {
@@ -442,4 +447,5 @@ export interface JiraClient {
   getAllBoards(): Promise<Board[]>
   getFirstBoardByNameContaining(name: string): Promise<Board>
   getUsers(): Promise<any>
+  getIssueTypes(): Promise<string[]>
 }

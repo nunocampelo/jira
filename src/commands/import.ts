@@ -1,10 +1,9 @@
 import { Command, flags } from '@oclif/command'
 import { csvParser } from '../utils/csv-parser'
 import { jiraClient, TaskRequestCreation, TaskType } from '../utils/jira/jira-client'
-import JiraCommand from './jira-command'
+import JiraCommand from '../abstract/jira-command'
 
 export default class Import extends JiraCommand {
-  static description = 'import tasks from csv'
 
   static flags = {
     help: flags.help({ char: 'h' }),
@@ -23,13 +22,16 @@ Components:
 ${this.components.data.map((cur: any, index: number) => `${cur.name}\n`)}
 
 People:
-${this.people.data.map((cur: any, index: number) => `${cur.name}\n`)}`
+${this.people.data.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}
+
+Issue types:
+${this.issueTypes.data.map((cur:string) => `${cur}\n`)}`
 
   }
 
   async run() {
-    const { args, flags } = this.parse(Import)
 
+    const { args, flags } = this.parse(Import)
     const delimiter: string = flags.delimiter
     const csvTasks: any = (await csvParser.parse(flags.file, flags.rowDelimiter)).filter((el: any) => el && el.summary && el.summary !== '')
 
