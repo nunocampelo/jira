@@ -3,6 +3,8 @@ import { csvParser } from '../utils/csv-parser'
 import { jiraClient, TaskRequestCreation, TaskType, TestRequestCreation } from '../jira/jira-client'
 import JiraCommand from '../abstract/jira-command'
 import { Logger, createLogger } from '@jsincubator/core'
+import { Result } from 'neverthrow'
+import { ResponseData } from '../jira/jira-client'
 
 const logger: Logger = createLogger(`jira.commands.import`)
 
@@ -59,28 +61,31 @@ ${this.priorities.data.map((cur: string) => `${cur}\n`)}`
       }
     })
 
-    const creationError: string[] = []
     logger.info(`creating tasks...`)
+
+    const creationErrors: string[] = []
 
     for (let index = 0; index < tasks.length; index++) {
 
       const task: TaskRequestCreation | TestRequestCreation = tasks[index]
       const taskCreationFunction: Function = task.type === 'Test' ? jiraClient.addTest : jiraClient.addTask;
-      const taskCreationResult: any = await taskCreationFunction(task)
 
-      if (taskCreationResult.error) {
-        creationError.push(`line:${index + 1} summary:${task.summary}`)
-        logger.error(`error creating task '%s': %s`, task.summary, taskCreationResult.error.message)
+      const result: Result<ResponseData, Error> = await taskCreationFunction(task)
+
+      if (result.isOk()) {
+        logger.info(`created task '%s' with key %s`, task.summary, result.value.result)
       } else {
-        logger.info(`created task '%s' with key %s`, task.summary, taskCreationResult.result)
+        creationErrors.push(`record:${index + 1} summary:${task.summary}`)
+        logger.error(`error creating task '%s': %s`, task.summary, result.error)
       }
-
     }
 
-    logger.info(`failed to create (see errors above):`)
-    creationError.forEach((cur: string) => {
-      logger.info(cur)
-    })
+    if (creationErrors.length > 0) {
+      logger.info(`aggregated faliure to create the following tasks (see errors above):`)
+      creationErrors.forEach((cur: string) => {
+        logger.info(cur)
+      })
+    }
   }
 }
 

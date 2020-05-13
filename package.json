@@ -24,6 +24,7 @@
     "inquirer": "^7.0.0",
     "jira-client": "^6.11.0",
     "neat-csv": "^5.1.0",
+    "neverthrow": "^2.2.1",
     "ts-interface-checker": "^0.1.9",
     "tslib": "^1.10.0"
   },

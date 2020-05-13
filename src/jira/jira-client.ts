@@ -6,6 +6,8 @@ import config from '../config/thales'
 
 import {Logger, createLogger} from '@jsincubator/core'
 
+import { ok, err, Result } from 'neverthrow'
+
 const logger: Logger = createLogger(`jira`)
 const api = new JiraApi(config.jira.client)
 const jiraProjectConfig = config.jira.project
@@ -20,6 +22,10 @@ const storyPointsValues: number[] = [0.5, 1, 2, 3, 5]
 //   fields: null
 //   // fields: "changelog,aggregatetimespent,aggregatetimeoriginalestimate,timetracking,creator,components,assignee,description,epic,issuelinks,issuetype,labels,priority,progress,status,subtasks,summary,fixVersions,customfield_9994,customfield_10002"
 // }
+
+export interface ResponseData {
+  result: any
+}
 
 const getPriorities = async () => {
   return (await api.listPriorities()).map((cur: any) => cur.name)
@@ -116,12 +122,8 @@ const addTask = async (request: TaskRequestCreation): Promise<any> => {
   return _createSubTasks(parentTask.key, request)
 }
 
-const addTest = async (request: TestRequestCreation): Promise<any> => {
-
-  const result: any = await _createTest(request)
-
-  // console.log(result)
-  return result 
+const addTest = (request: TestRequestCreation): Promise<Result<ResponseData, Error>> => {
+  return _createTest(request)
 }
 
 const updateTask = async (issueId: string, issue: any): Promise<any> => {
@@ -148,7 +150,7 @@ const moveToSprint = async (sprintId: string, issueId: string): Promise<any> => 
   return api.addIssueToSprint(issueId, sprintId)
 }
 
-const _createTest = (request: TestRequestCreation) => {
+const _createTest = async (request: TestRequestCreation): Promise<Result<ResponseData, Error>> => {
 
   const task: any =
     {
@@ -175,21 +177,14 @@ const _createTest = (request: TestRequestCreation) => {
       }
     }
 
-  return api.addNewIssue(task).catch((response: any) => {
-    // console.log(`error creating task ${request.summary}: ${response}`)
-    response.error.message = response.message
-    return {
-      error: response.error
-    }
-  }).then((response: any) => {
+    try {
 
-    if(!response.error) {
-      response.result = response.key
-      // console.log(`Created task '${request.summary}' with key ${response.key}`)
-    }
+      const response: any = await api.addNewIssue(task)
+      return ok({result: response.key})
 
-     return response
-  })
+    } catch(error) {
+      return err(error)
+    }
 }
 
 const _createTask = (request: TaskRequestCreation) => {
