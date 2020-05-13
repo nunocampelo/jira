@@ -1,7 +1,10 @@
 import { Command, flags } from '@oclif/command'
 import { csvParser } from '../utils/csv-parser'
-import { jiraClient, TaskRequestCreation, TaskType, TestRequestCreation } from '../utils/jira/jira-client'
+import { jiraClient, TaskRequestCreation, TaskType, TestRequestCreation } from '../jira/jira-client'
 import JiraCommand from '../abstract/jira-command'
+import { Logger, createLogger } from '@jsincubator/core'
+
+const logger: Logger = createLogger(`jira.commands.import`)
 
 export default class Import extends JiraCommand {
 
@@ -25,10 +28,10 @@ People:
 ${this.people.data.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}
 
 Issue types:
-${this.issueTypes.data.map((cur:string) => `${cur}\n`)}
+${this.issueTypes.data.map((cur: string) => `${cur}\n`)}
 
 Priorities:
-${this.priorities.data.map((cur:string) => `${cur}\n`)}`
+${this.priorities.data.map((cur: string) => `${cur}\n`)}`
 
   }
 
@@ -37,13 +40,12 @@ ${this.priorities.data.map((cur:string) => `${cur}\n`)}`
     const { args, flags } = this.parse(Import)
     const delimiter: string = flags.delimiter
 
-    console.log(`parsing csv ${flags.file}`)
+    logger.info(`parsing file %s...`, flags.file)
 
     const csvTasks: any = (await csvParser.parse(flags.file, flags.rowDelimiter)).filter((el: any) => el && el.summary && el.summary !== '')
 
     const tasks: (TaskRequestCreation | TestRequestCreation)[] = csvTasks.map((el: any): TaskRequestCreation | TestRequestCreation => {
 
-      // console.log(el.description.split('\\n'))
       return {
         ...el,
         summary: el.summary,
@@ -58,33 +60,27 @@ ${this.priorities.data.map((cur:string) => `${cur}\n`)}`
     })
 
     const creationError: string[] = []
-    console.log(`creating tasks...\n`)
-    
+    logger.info(`creating tasks...`)
+
     for (let index = 0; index < tasks.length; index++) {
 
-      
       const task: TaskRequestCreation | TestRequestCreation = tasks[index]
-
-      const taskCreationFunction: Function = task.type === 'Test'? jiraClient.addTest : jiraClient.addTask; 
+      const taskCreationFunction: Function = task.type === 'Test' ? jiraClient.addTest : jiraClient.addTask;
       const taskCreationResult: any = await taskCreationFunction(task)
-      
-      if(taskCreationResult.error) {
-        creationError.push(`line:${index + 1} summary:${task.summary}`)
-        console.log(`error creating task '${task.summary}': ${taskCreationResult.error.message}`)
-      } else {
-        console.log(`created task '${task.summary}' with key ${taskCreationResult.result}`)
-      }
-      // if(task.type === 'Test'){
 
-      //   await jiraClient.addTest(task as TestRequestCreation)
-        
-      // } else {
-        
-      //   await jiraClient.addTask(task)
-      // }
+      if (taskCreationResult.error) {
+        creationError.push(`line:${index + 1} summary:${task.summary}`)
+        logger.error(`error creating task '%s': %s`, task.summary, taskCreationResult.error.message)
+      } else {
+        logger.info(`created task '%s' with key %s`, task.summary, taskCreationResult.result)
+      }
+
     }
 
-    console.log(`\nfailed to create (see errors above):${creationError.reduce((acc: string, cur: string) => `${acc}\n${cur}`, '')}`)
+    logger.info(`failed to create (see errors above):`)
+    creationError.forEach((cur: string) => {
+      logger.info(cur)
+    })
   }
 }
 

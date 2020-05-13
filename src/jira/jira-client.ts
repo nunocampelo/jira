@@ -1,12 +1,13 @@
 import { request } from 'https'
 const JiraApi = require('jira-client')
-
 const path = require('path')
 import { Builder } from 'builder-pattern'
+import config from '../config/thales'
 
-import config from '../../config/thales'
+import {Logger, createLogger} from '@jsincubator/core'
+
+const logger: Logger = createLogger(`jira`)
 const api = new JiraApi(config.jira.client)
-
 const jiraProjectConfig = config.jira.project
 const jiraQueryConfig = config.jira.query
 const storyPointsValues: number[] = [0.5, 1, 2, 3, 5]
@@ -41,9 +42,17 @@ const getFirstBoardByNameContaining = async (name: string) => {
 }
 
 const fetchIssuesForBoard = async (boardId: number, jiraQuery: string): Promise<any> => {
-  console.log(`Executing query ${jiraQuery}`)
-  console.log(`For board with id ${boardId}`)
+  logger.info(`executing query ${jiraQuery}`)
+  logger.info(`for board with id ${boardId}`)
+
   return api.getIssuesForBoard(boardId, jiraQueryConfig.startAt, jiraQueryConfig.maxResults, jiraQuery, jiraQueryConfig.validateQuery, jiraQueryConfig.fields)
+  .catch((response: any) => {
+    logger.info(`error executing query %s`, response)
+    response.error.message = response.message
+    return {
+      error: response.error
+    }
+  })
 }
 
 const getIssues = async (boardId: number, jiraQuery: string): Promise<any> => {
@@ -51,12 +60,12 @@ const getIssues = async (boardId: number, jiraQuery: string): Promise<any> => {
   try {
 
     const response: any = await fetchIssuesForBoard(boardId, jiraQuery)
-    console.log(`Got ${response.issues.length} issues`)
+    logger.info(`got %d issues`, response.issues.length)
 
     return response.issues
 
   } catch (err) {
-    console.error(err)
+    logger.error(err)
   }
 }
 

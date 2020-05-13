@@ -145,7 +145,6 @@ OPTIONS
   -h, --help                   show CLI help
   -o, --openSprints            only open sprints
   -p, --people=people          assignee
-  -w, --work=work              sprint name
 ```
 
 _See code: [src\commands\list.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\list.ts)_

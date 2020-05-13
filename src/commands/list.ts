@@ -4,12 +4,14 @@ const chalk = require('chalk')
 const Table = require('cli-table')
 
 import config from '../config/thales'
-
+import { Logger, createLogger } from '@jsincubator/core'
 // import { people, peopleDesc, indexesToTGIs } from '../constants/team'
 // import { status, statusDesc } from '../constants/jira'
-import { Builder, JiraQueryBuilder, Operation } from '../utils/jira/jira-query-builder'
-import { jiraClient, JiraClient, Board } from '../utils/jira/jira-client'
+import { Builder, JiraQueryBuilder, Operation } from '../jira/jira-query-builder'
+import { jiraClient, JiraClient, Board } from '../jira/jira-client'
 import JiraCommand from '../abstract/jira-command'
+
+const logger: Logger = createLogger(`jira.commands.list`)
 
 export default class List extends JiraCommand {
 
@@ -29,11 +31,11 @@ export default class List extends JiraCommand {
     List.description = `search for issues by filters
     
 ${this.boards.description}`
-// People flag description
-// ${peopleDesc}
-// Status flag description
-// ${statusDesc}
-// ${JiraCommand.description}`
+    // People flag description
+    // ${peopleDesc}
+    // Status flag description
+    // ${statusDesc}
+    // ${JiraCommand.description}`
 
     // List.flags = {
     //   ...List.flags,
@@ -75,22 +77,27 @@ ${this.boards.description}`
     const jiraQuery: string = jiraQueryBuilder.build()
 
     const table: any = await this.getIssuesTable(boardId, jiraQuery)
-    // console.log(table.toString())
+    console.log(table.toString())
   }
 
   async getIssuesTable(boardId: number, jiraQuery: string): Promise<any> {
 
-    try {
+    // try {
 
-      const response: any = await jiraClient.fetchIssuesForBoard(boardId, jiraQuery)
+    const response: any = await jiraClient.fetchIssuesForBoard(boardId, jiraQuery)
 
-      console.log(`Got ${response.issues.length} issues`)
-      console.log(response.issues.filter((cur: any) => cur.key === 'VLBSFI_GDP_AG-7074')[0].fields.priority)
-      return this.issuesToTable(response.issues)
-
-    } catch (err) {
-      console.error(err)
+    if (response.error) {
+      logger.error(`error getting issues:%s`, response.error.message)
+    } else {
+      logger.info(`got %d issues`, response.issues.length)
     }
+
+    // console.log(response.issues.filter((cur: any) => cur.key === 'VLBSFI_GDP_AG-7074')[0].fields.priority)
+    return this.issuesToTable(response.issues)
+
+    // } catch (err) {
+    //   console.error(err)
+    // }
   }
 
   issuesToTable(issues: any): any {

@@ -1,8 +1,8 @@
 import { Command, flags } from '@oclif/command'
 import { Builder } from 'builder-pattern'
 
-import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../utils/jira/jira-query-builder'
-import { jiraClient, JiraClient, TaskRequestCreation, SubTaskRequestCreation, TaskType } from '../utils/jira/jira-client'
+import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../jira/jira-query-builder'
+import { jiraClient, JiraClient, TaskRequestCreation, SubTaskRequestCreation, TaskType } from '../jira/jira-client'
 
 export default class Add extends Command {
   static description = `task creation`
@@ -38,7 +38,7 @@ export default class Add extends Command {
       summary: flags.summary,
       assignee: flags.assignee,
       description: flags.description.split(delimiter),
-      componentName: flags.component,
+      components: flags.component.split(delimiter),
       labels: [],
       versions: flags.versions.split(delimiter),
       fixVersions: flags.versions.split(delimiter),
