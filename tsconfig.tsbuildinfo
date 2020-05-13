@@ -226,28 +226,32 @@
         "signature": "49beaaf7abf07072139894dd8fd5360c52aea16d25dc20231b7322eab57b7b60"
       },
       "./src/utils/jira/jira-client.ts": {
-        "version": "f49b3ff495e3be105fd70ea8b4ed617b23690b6598d0a19c255809404de60aa0",
-        "signature": "af01d5e450ffbf75ed3c92bb0754ec714598b258a8a6e6c2156c1e772f18560a"
+        "version": "b47f2399088b0a11cd5728cf594477c393c63d12737167aa423ef0211d40b25a",
+        "signature": "0ab64d29065a06478b7c8b13cbcb3a61a6710cf1e89197e812ffad6213658255"
       },
       "./src/abstract/jira-command.ts": {
-        "version": "3368cc557f5d323ac72b1e77d2c22d8e070f830a4092c9cfe2cd17704f07f196",
-        "signature": "8acce30784bb9c5a9374dbee6f31c86a37ff8e890a263aee15ab721382465d7f"
+        "version": "0efc8421d6d1a7aab2479de9ead83c5ac6ec17e3ac20157b2ac3c8d9a0ced0e4",
+        "signature": "6aa11a8be7e8d66fa5eead974f2d45f7cc6a6e308755df233db9e35f619b98d5"
+      },
+      "./src/utils/jira/jira-query-builder.ts": {
+        "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
+        "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
+      },
+      "./src/commands/add.ts": {
+        "version": "ccbb2b35c196104e73e6de1d00b9912a0dcebd5d6c7bd9dabe6faad8eb40bffe",
+        "signature": "634d00e012a8d1da30c4251d7a5a17a587768efd0be27238c6cc7467a12db2a9"
       },
       "./src/utils/csv-parser.ts": {
         "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
         "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
       },
       "./src/commands/import.ts": {
-        "version": "ed2fc6154fbeb7fffb4652b169ec08ce1d2ca754c8430a80de2e2e6d14949f02",
-        "signature": "4079556f04da2a7c9abff702c79b04fcb54e7634cf4417dba01f9109962686d5"
+        "version": "54af4560d14c9c0299ea375501d74e211601bff12c36e68e9e830549bc1139c3",
+        "signature": "7aa70b407c8e46aa22d25a0c9794c02c72e5215b154d001f71c076501549e8b0"
       },
-      "./src/utils/jira/jira-query-builder.ts": {
-        "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
-        "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
-      },
-      "./src/commands/task.ts": {
-        "version": "af1a82d24403262e4d581d1ea7760656b3de122a74f1a4d41fb9c2aeb7ed59a4",
-        "signature": "4b1bd572232e3d83ee97047a0280a6f60e6ed5b724067b11234237439dcdd277"
+      "./src/commands/list.ts": {
+        "version": "4fcff2fcbceb568390b5255d4d3ee1f419e199b00379d82dc69b20890763f238",
+        "signature": "64c68ead23be6e9c63a212f6b959130cde24dfb73efe41e5276c584d77d10d43"
       },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "6062bf0c69f8a4bb7f5bb817634899e94fbe74822e59187584a50277215d6dfc",
@@ -1258,6 +1262,18 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./src/utils/jira/jira-query-builder.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/commands/add.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts",
+        "./node_modules/builder-pattern/dist/src/index.d.ts",
+        "./src/utils/jira/jira-query-builder.ts",
+        "./src/utils/jira/jira-client.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/utils/csv-parser.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
@@ -1270,15 +1286,12 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/utils/jira/jira-query-builder.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/commands/task.ts": [
+      "./src/commands/list.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts",
-        "./node_modules/builder-pattern/dist/src/index.d.ts",
+        "./src/config/thales.ts",
         "./src/utils/jira/jira-query-builder.ts",
         "./src/utils/jira/jira-client.ts",
+        "./src/abstract/jira-command.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2899,14 +2912,22 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./src/abstract/jira-command.ts": [
+        "./node_modules/@oclif/command/lib/index.d.ts"
+      ],
+      "./src/commands/add.ts": [
+        "./node_modules/@oclif/parser/lib/flags.d.ts",
+        "./node_modules/@oclif/command/lib/index.d.ts"
+      ],
       "./src/commands/import.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
         "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/abstract/jira-command.ts"
       ],
-      "./src/commands/task.ts": [
+      "./src/commands/list.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts"
+        "./node_modules/@oclif/command/lib/index.d.ts",
+        "./src/abstract/jira-command.ts"
       ],
       "./node_modules/@types/node/globals.d.ts": [
         "./node_modules/@types/node/util.d.ts",
@@ -4262,14 +4283,10 @@
       "./node_modules/@types/sinon/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/abstract/jira-command.ts": [
-        "./node_modules/@oclif/command/lib/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "./src/abstract/jira-command.ts",
-      "./src/commands/import.ts",
+      "./src/commands/list.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.es2015.d.ts",
       "./node_modules/typescript/lib/lib.es2016.d.ts",
@@ -4327,9 +4344,11 @@
       "./node_modules/builder-pattern/dist/src/index.d.ts",
       "./src/config/thales.ts",
       "./src/utils/jira/jira-client.ts",
-      "./src/utils/csv-parser.ts",
+      "./src/abstract/jira-command.ts",
       "./src/utils/jira/jira-query-builder.ts",
-      "./src/commands/task.ts",
+      "./src/commands/add.ts",
+      "./src/utils/csv-parser.ts",
+      "./src/commands/import.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",

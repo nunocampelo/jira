@@ -35,6 +35,11 @@ export default abstract class JiraCommand extends Command {
         flag: '',
         description: ''
     }
+    priorities: Feature = {
+        data: [],
+        flag: '',
+        description: ''
+    }
 
     async init() {
 
@@ -44,15 +49,14 @@ export default abstract class JiraCommand extends Command {
 
     _initData = async () => {
 
-        const results: any[] = await Promise.all([jiraClient.getAllBoards(), jiraClient.getComponents(), jiraClient.getIssueTypes()])
+        const results: any[] = await Promise.all([jiraClient.getAllBoards(), jiraClient.getComponents(), jiraClient.getIssueTypes(), jiraClient.getPriorities()])
 
         const boardData: Board[] = results[0] 
         const componentsData: any[] = results[1]
         const peopleData: any[] = config.team.people
         const issueTypesData: string[] = results[2]
+        const prioritiesData: string[] = results[3]
 
-        console.log('types', issueTypesData)
-        
         const defaultBoardIndex: string = boardData.reduce((acc: string, cur: Board, index: number) => {
 
             if (!acc) {
@@ -90,7 +94,16 @@ ${peopleData.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}`
             data: issueTypesData,
             flag: flags.string({ char: 't', description: `story types index`, options: Object.keys(issueTypesData), default: '0'}),
             description: `Issue types:
-${issueTypesData.map((cur: any, index: number) => `${index} => ${cur}\n`)}`
+${issueTypesData.map((cur: string, index: number) => `${index} => ${cur}\n`)}`
         }
+
+        this.priorities = {
+            data: prioritiesData,
+            flag: flags.string({ char: 't', description: `priority index`, options: Object.keys(prioritiesData), default: '0'}),
+            description: `Priorities:
+${prioritiesData.map((cur: string, index: number) => `${index} => ${cur}\n`)}`
+        }
+
+
     }
 }

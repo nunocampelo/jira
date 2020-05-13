@@ -9,7 +9,7 @@ const api = new JiraApi(config.jira.client)
 
 const jiraProjectConfig = config.jira.project
 const jiraQueryConfig = config.jira.query
-const storyPointsValues: number[] = [0.5,1,2,3,5]
+const storyPointsValues: number[] = [0.5, 1, 2, 3, 5]
 
 // const jiraConfig = {
 //   boardId: '13',
@@ -20,12 +20,16 @@ const storyPointsValues: number[] = [0.5,1,2,3,5]
 //   // fields: "changelog,aggregatetimespent,aggregatetimeoriginalestimate,timetracking,creator,components,assignee,description,epic,issuelinks,issuetype,labels,priority,progress,status,subtasks,summary,fixVersions,customfield_9994,customfield_10002"
 // }
 
+const getPriorities = async () => {
+  return (await api.listPriorities()).map((cur: any) => cur.name)
+}
+
 const getIssueTypes = async () => {
   return (await api.listIssueTypes()).map((cur: any) => cur.name);
 }
 
 const getUsers = async () => {
- return (await api.getUsersInGroup('jira-users')).values
+  return (await api.getUsersInGroup('jira-users')).values
 }
 
 const getAllBoards = async () => {
@@ -103,6 +107,14 @@ const addTask = async (request: TaskRequestCreation): Promise<any> => {
   return _createSubTasks(parentTask.key, request)
 }
 
+const addTest = async (request: TestRequestCreation): Promise<any> => {
+
+  const result: any = await _createTest(request)
+
+  // console.log(result)
+  return result 
+}
+
 const updateTask = async (issueId: string, issue: any): Promise<any> => {
   return api.updateIssue(issueId, issue)
 }
@@ -127,40 +139,84 @@ const moveToSprint = async (sprintId: string, issueId: string): Promise<any> => 
   return api.addIssueToSprint(issueId, sprintId)
 }
 
+const _createTest = (request: TestRequestCreation) => {
+
+  const task: any =
+    {
+      fields: {
+        fixVersions: request.fixVersions.map((version: string) => { return { name: version } }),
+        labels: request.labels,
+        components: request.components.map((cur: string) => {
+          return {
+            name: cur
+          }
+        }),
+        issuetype: {
+          name: 'Test',
+        },
+        project: {
+          key: jiraProjectConfig.name
+        },
+        description: request.description.reduce((acc: string, cur: string) => acc + cur + '\n', ''),
+        summary: request.summary,
+        customfield_10611: request.testRepositoryPath,
+        priority: {
+          name: request.priority
+        }
+      }
+    }
+
+  return api.addNewIssue(task).catch((response: any) => {
+    // console.log(`error creating task ${request.summary}: ${response}`)
+    response.error.message = response.message
+    return {
+      error: response.error
+    }
+  }).then((response: any) => {
+
+    if(!response.error) {
+      response.result = response.key
+      // console.log(`Created task '${request.summary}' with key ${response.key}`)
+    }
+
+     return response
+  })
+}
+
 const _createTask = (request: TaskRequestCreation) => {
 
   const task: any =
     {
-      "fields": {
-        "fixVersions": request.fixVersions ?
+      fields: {
+        fixVersions: request.fixVersions ?
           request.fixVersions.map((version: string) => { return { name: version } }) : [],
-        "labels": request.labels,
-        "versions": request.versions ?
+        labels: request.labels,
+        versions: request.versions ?
           request.versions.map((version: string) => { return { name: version } }) : [],
-        "assignee": {
-          "name": request.assignee,
+        assignee: {
+          name: request.assignee,
         },
-        "components": [
-          {
-            "name": request.componentName
+        components: request.components ? request.components.map((cur: string) => {
+          return {
+            name: cur
           }
-        ],
-        "issuetype": {
-          "name": request.type || "Story",
+        }) : [],
+        issuetype: {
+          name: request.type || 'Story',
         },
-        "parent": {
-          "key": request.parentKey
+        parent: {
+          key: request.parentKey
         },
-        "project": {
-          "key": request.project || jiraProjectConfig.name
+        project: {
+          key: request.project || jiraProjectConfig.name
         },
-        "description": request.description ? request.description.reduce((acc: string, cur: string) => acc + cur + '\n', '') : undefined,
-        "customfield_10006": request.epic,
-        "summary": request.summary,
-        "customfield_10002": request.storyPoints,
-        "timetracking": {
-          "originalEstimate": request.originalEstimate,
-          "remainingEstimate": request.remainingEstimate
+        description: request.description ? request.description.reduce((acc: string, cur: string) => acc + cur + '\n', '') : undefined,
+        customfield_10006: request.epic,
+        summary: request.summary,
+        customfield_10002: request.storyPoints,
+        timetracking: {
+          originalEstimate: request.originalEstimate,
+          remainingEstimate: request.remainingEstimate
         }
       }
     }
@@ -171,15 +227,30 @@ const _createTask = (request: TaskRequestCreation) => {
     }
   }
 
-  console.log(task)
+  // console.log(task)
 
-  const taskCreationPromise: Promise<any> = api.addNewIssue(task)
+  // const taskCreationPromise: Promise<any> = api.addNewIssue(task)
 
-  taskCreationPromise.then((response: any) => {
-    console.log(`Created task '${request.summary}' with key ${response.key}`)
+  // taskCreationPromise.then((response: any) => {
+  //   console.log(`Created task '${request.summary}' with key ${response.key}`)
+  // })
+
+  // return taskCreationPromise
+
+  return api.addNewIssue(task).catch((response: any) => {
+    // console.log(`error creating task ${request.summary}: ${response}`)
+    return {
+      error: response.error
+    }
+  }).then((response: any) => {
+
+    if(!response.error) {
+      response.result = response.key
+      // console.log(`Created task '${request.summary}' with key ${response.key}`)
+    }
+
+     return response
   })
-
-  return taskCreationPromise
 }
 
 const _createSubTasks = async (parentKey: string, parentTaskRequest: TaskRequestCreation): Promise<void> => {
@@ -369,7 +440,7 @@ export interface Board {
 
 export enum TaskType {
   Story, SubTask = 'TM SubTask',
-  Task = 'TM Task', 
+  Task = 'TM Task',
   ProblemReport = 'Problem Report'
 }
 
@@ -378,7 +449,7 @@ export enum Severity {
 }
 
 export interface SubTaskRequestCreation extends TaskRequestCreation {
-  type: TaskType,
+  type: string,
   parentKey: string
 }
 
@@ -389,11 +460,11 @@ export interface TaskRequestCreation {
   description?: string[]
   storyPoints?: number
   epic?: string
-  componentName?: string
+  components?: string[]
   assignee?: string
   fixVersions?: string[]
   versions?: string[]
-  type?: TaskType
+  type: string
   project?: string
   parentKey?: string
   originalEstimate?: number
@@ -406,6 +477,17 @@ export interface TaskRequestCreation {
   subTasks: any[]
 }
 
+export interface TestRequestCreation {
+  summary: string,
+  labels: string[],
+  components: string[],
+  type: string,
+  priority: string,
+  fixVersions: string[],
+  testRepositoryPath: string,
+  description: string[]
+}
+
 export const jiraClient: JiraClient = {
   fetchIssuesForBoard,
   getIssues,
@@ -415,6 +497,7 @@ export const jiraClient: JiraClient = {
   getActiveSprints,
   addComment,
   addTask,
+  addTest,
   getRapidViews,
   updateTask,
   getVersions,
@@ -425,7 +508,8 @@ export const jiraClient: JiraClient = {
   getAllBoards,
   getFirstBoardByNameContaining,
   getUsers,
-  getIssueTypes
+  getIssueTypes,
+  getPriorities
 }
 
 export interface JiraClient {
@@ -437,6 +521,7 @@ export interface JiraClient {
   getActiveSprints(boardId: number): Promise<any>
   addComment(issueNumber: number, text: string): Promise<any>
   addTask(task: any): Promise<any>
+  addTest(task: TestRequestCreation): Promise<any>
   getRapidViews(): Promise<any>
   updateTask(issueId: string, issue: any): Promise<any>
   getVersions(boardId: number): Promise<any>
@@ -448,4 +533,5 @@ export interface JiraClient {
   getFirstBoardByNameContaining(name: string): Promise<Board>
   getUsers(): Promise<any>
   getIssueTypes(): Promise<string[]>
+  getPriorities(): Promise<string[]>
 }

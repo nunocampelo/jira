@@ -4,7 +4,7 @@ import { Builder } from 'builder-pattern'
 import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../utils/jira/jira-query-builder'
 import { jiraClient, JiraClient, TaskRequestCreation, SubTaskRequestCreation, TaskType } from '../utils/jira/jira-client'
 
-export default class Task extends Command {
+export default class Add extends Command {
   static description = `task creation`
 
   static flags = {
@@ -20,23 +20,14 @@ export default class Task extends Command {
     tests: flags.boolean({ char: 't', description: `includes SDT tests update`, required: false, default: false }),
     requirements: flags.boolean({ char: 'r', description: `includes requirements`, required: false, default: false }),
     automation: flags.boolean({ char: 'o', description: `includes UATs`, required: false, default: false }),
+    type: flags.string({ char: 't', description: `issue type`, required: false, default: 'Story' }),
     delimiter: flags.string({ char: 'l', description: `delimiter to split with`, required: false, default: ',' }),
   }
-  // static args = [{ name: 'operation', required: true, description: 'task operation to perform', options: ['get', 'add'] }]
 
   async run() {
 
-    const { args, flags } = this.parse(Task)
+    const { args, flags } = this.parse(Add)
     await this.add(flags)
-
-    // switch (args.operation) {
-    //   case 'get':
-    //     await this.get(flags)
-    //     break
-    //   case 'add':
-    //     await this.add(flags)
-    //     break
-    // }
   }
 
   async add(flags: any = {}) {
@@ -58,7 +49,8 @@ export default class Task extends Command {
       stdTestsSubTasks: flags.tests,
       requirementSubTasks: flags.requirements,
       automationSubTasks: flags.automation,
-      storyPoints: -1
+      storyPoints: -1,
+      type: flags.type
     }
 
     const parentTaskRequestCreation: TaskRequestCreation = Builder(taskRequestCreationTemplate).build()
