@@ -222,20 +222,8 @@
         "signature": "81f53a0abba4879a2565e118da892894a53a3492b32d8cbdb0e37d78b74ec266"
       },
       "./src/config/thales.ts": {
-        "version": "2f60cd6b87b71e64fbcfa4509e688cb087ddd85b3845cbd440447d15fff1df4d",
-        "signature": "49beaaf7abf07072139894dd8fd5360c52aea16d25dc20231b7322eab57b7b60"
-      },
-      "./node_modules/log4js/types/log4js.d.ts": {
-        "version": "753391328df8a591c71aea03b21aae20fddfda47778d5dcbb0a0b24a44b76d1b",
-        "signature": "753391328df8a591c71aea03b21aae20fddfda47778d5dcbb0a0b24a44b76d1b"
-      },
-      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": {
-        "version": "1cb91eb6024b5cdbd0357a802a48ab097a020d92615e822d3f39e549aa51ca72",
-        "signature": "1cb91eb6024b5cdbd0357a802a48ab097a020d92615e822d3f39e549aa51ca72"
-      },
-      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": {
-        "version": "880b59370c5985c8d9545192513a3e50a3fcfc7e208ed178cfcc76c3be98312f",
-        "signature": "880b59370c5985c8d9545192513a3e50a3fcfc7e208ed178cfcc76c3be98312f"
+        "version": "e90e1b35de426e67c3fb206276dfb7d3e3de4da7f89db0f43907d3981100c040",
+        "signature": "79ddbf371c28c9de370d89a3979cb73aa97da0b380564888e0c34761ee6c7178"
       },
       "./node_modules/@types/node/globals.d.ts": {
         "version": "6062bf0c69f8a4bb7f5bb817634899e94fbe74822e59187584a50277215d6dfc",
@@ -417,6 +405,38 @@
         "version": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c",
         "signature": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c"
       },
+      "./node_modules/@types/caseless/index.d.ts": {
+        "version": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28",
+        "signature": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28"
+      },
+      "./node_modules/@types/request/node_modules/form-data/index.d.ts": {
+        "version": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115",
+        "signature": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115"
+      },
+      "./node_modules/@types/tough-cookie/index.d.ts": {
+        "version": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873",
+        "signature": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873"
+      },
+      "./node_modules/@types/request/index.d.ts": {
+        "version": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098",
+        "signature": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098"
+      },
+      "./node_modules/@types/jira-client/index.d.ts": {
+        "version": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b",
+        "signature": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b"
+      },
+      "./node_modules/log4js/types/log4js.d.ts": {
+        "version": "753391328df8a591c71aea03b21aae20fddfda47778d5dcbb0a0b24a44b76d1b",
+        "signature": "753391328df8a591c71aea03b21aae20fddfda47778d5dcbb0a0b24a44b76d1b"
+      },
+      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": {
+        "version": "1cb91eb6024b5cdbd0357a802a48ab097a020d92615e822d3f39e549aa51ca72",
+        "signature": "1cb91eb6024b5cdbd0357a802a48ab097a020d92615e822d3f39e549aa51ca72"
+      },
+      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": {
+        "version": "880b59370c5985c8d9545192513a3e50a3fcfc7e208ed178cfcc76c3be98312f",
+        "signature": "880b59370c5985c8d9545192513a3e50a3fcfc7e208ed178cfcc76c3be98312f"
+      },
       "./node_modules/@types/nodemailer/lib/dkim.d.ts": {
         "version": "63cdbcdb5776024d84e9ad301e013ca224ef055e5233709a5cdee37df66dbc67",
         "signature": "63cdbcdb5776024d84e9ad301e013ca224ef055e5233709a5cdee37df66dbc67"
@@ -581,33 +601,49 @@
         "version": "7140b8805c82c586de623a73531cd35ff1d79ea051c39d56fcbfc17256e840f7",
         "signature": "7140b8805c82c586de623a73531cd35ff1d79ea051c39d56fcbfc17256e840f7"
       },
+      "./node_modules/neverthrow/dist/result.d.ts": {
+        "version": "5db4d6e757e4a5b562d1fa07fbd1659f4d51074c8a35075cf2f2a3d4367605b8",
+        "signature": "5db4d6e757e4a5b562d1fa07fbd1659f4d51074c8a35075cf2f2a3d4367605b8"
+      },
+      "./node_modules/neverthrow/dist/chain.d.ts": {
+        "version": "102705e1d4d54975be3a4e42a116a79bbc6ed28dac6c1760bf44a1533358fa13",
+        "signature": "102705e1d4d54975be3a4e42a116a79bbc6ed28dac6c1760bf44a1533358fa13"
+      },
+      "./node_modules/neverthrow/dist/index.d.ts": {
+        "version": "ff103cf08ca1b235767858e3c99bdd1911ca8bbf1586eb5fe546a7f34425d757",
+        "signature": "ff103cf08ca1b235767858e3c99bdd1911ca8bbf1586eb5fe546a7f34425d757"
+      },
+      "./src/jira/request-creation-mapper.ts": {
+        "version": "fe7104a21162286192a2d6c3ae2ba34debbca93b882c47455173766023804d32",
+        "signature": "9bbad07259954798224a6c8b667b86dec477d147ed8a439c7f2a6e8d48b41fae"
+      },
       "./src/jira/jira-client.ts": {
-        "version": "c4db26b8470b00c2a491b483553dcb739abc2bf71df964aeeb39468535af3e57",
-        "signature": "1eb4c7c14335ca49985ea0bcff54236806a57c849bdc05661fc28a8e735b0daa"
+        "version": "a1bc8a8d90052033691914692c719283a50d9b6dcf7593f553acb4f30d2836b3",
+        "signature": "e18e9ccee7b8c28548e7b8cd9698f2827fc45fe2d7553df2872e31961dd6f43d"
       },
       "./src/abstract/jira-command.ts": {
-        "version": "0682188028dca859ccf020ab49b420b45bb65a5941b525bb42ad5b344f23eedd",
-        "signature": "4b8b9d62e6e469dadca30f57a4d1cfc2c3075c76a922d553ad86a33a568b4ee6"
+        "version": "1f73cfeb7e949651cf2050de3679905ece375c35f840be17831bd94c1539b2ea",
+        "signature": "a98d7efa95a8db9255e7adc6752018be1fb1c5c28ae21fb333b533eb79266933"
       },
       "./src/jira/jira-query-builder.ts": {
         "version": "162694b63f1380f62b9dc05c20faa7bc9cc669c60ab2beaa44d464d6e59ec033",
         "signature": "4cfb6da266412c152bf76cc106f2edd6160e13fb7a061ea14aa0f01d1f9d20c5"
       },
       "./src/commands/add.ts": {
-        "version": "43a80358ca16969fe12d19210f1eeb133f971825062d90dae8fde6cbb055c41b",
-        "signature": "634d00e012a8d1da30c4251d7a5a17a587768efd0be27238c6cc7467a12db2a9"
+        "version": "40be746bf4d11fbabb8e2d7b363fe8b3a9ca1fc9f83828e54b13e0addeb06aba",
+        "signature": "d00770450c24a632ea7111133987a142c2e012fd04048f761838271c34c0d608"
       },
       "./src/utils/csv-parser.ts": {
         "version": "d42337408ce8532d67b5b4cae9a1f191b9347c1fa9d731af27f0442967a779a7",
         "signature": "9374114bedf46bc8e4c2a802c4c25300369a1ea70ba95de3abbd69ca82e0e909"
       },
       "./src/commands/import.ts": {
-        "version": "128424f2dc6931b10446fa6c7f9d26ef64b3e5bb9002599d48f818727e74fd82",
+        "version": "4d0852368a44781dd1de1243a9c103903331090f76b3cd5d80b520e277ee98fa",
         "signature": "7aa70b407c8e46aa22d25a0c9794c02c72e5215b154d001f71c076501549e8b0"
       },
       "./src/commands/list.ts": {
-        "version": "0c9e454c97af13fa8daddcb51cd84877667288cc732e468aca8dd62b4fe21cf9",
-        "signature": "7fc4a69e6e5d4530515d1188ab754a0b6f371a62eae9478452a7b3866592ad29"
+        "version": "6d6d415260c1fd531eddce2e01a51a4f952f29212787797a64bdc95b4064fc81",
+        "signature": "83bcfbf78bb7ad0540e6f24d23d5c802bd40b54098566e207275869fffb578f3"
       },
       "./node_modules/@types/bluebird/index.d.ts": {
         "version": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5",
@@ -624,10 +660,6 @@
       "./node_modules/@types/asciichart/index.d.ts": {
         "version": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3",
         "signature": "efbc507cdacb0803050b6a4c6bd96bc9bdb0ac80dc85eac32bbadebc0f4fadd3"
-      },
-      "./node_modules/@types/caseless/index.d.ts": {
-        "version": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28",
-        "signature": "5343f3c160282dfbaab9af350119a0c3b59b7076ef0117bb5995a66e240dab28"
       },
       "./node_modules/@types/chai/index.d.ts": {
         "version": "0a534de2e8e1b76641c091f58fda5b8955f0e3b9df67ceae097d94dfe95c5f67",
@@ -997,22 +1029,6 @@
         "version": "2cd9edbb4a6411a9f5258237dd73323db978d7aa9ebf1d1b0ac79771ac233e24",
         "signature": "2cd9edbb4a6411a9f5258237dd73323db978d7aa9ebf1d1b0ac79771ac233e24"
       },
-      "./node_modules/@types/request/node_modules/form-data/index.d.ts": {
-        "version": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115",
-        "signature": "e91ad231af87f864b3f07cd0e39b1cf6c133988156f087c1c3ccb0a5491c9115"
-      },
-      "./node_modules/@types/tough-cookie/index.d.ts": {
-        "version": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873",
-        "signature": "a6c4cc913246a4f40423d0c6e618239072d7662bd54f6d8b8be59aec55d59873"
-      },
-      "./node_modules/@types/request/index.d.ts": {
-        "version": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098",
-        "signature": "d3c7c28e24c242c1054c6865bb6704914dfdb212063701c6fb02a8a477d00098"
-      },
-      "./node_modules/@types/jira-client/index.d.ts": {
-        "version": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b",
-        "signature": "0badc2416985f05a38346242e67d2e616bd5d0f2a42bb0a437a0938f5ef1393b"
-      },
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": {
         "version": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798",
         "signature": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798"
@@ -1091,6 +1107,7 @@
       "strict": true,
       "target": 4,
       "composite": true,
+      "allowSyntheticDefaultImports": true,
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
@@ -1357,20 +1374,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./src/config/thales.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/log4js/types/log4js.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": [
-        "./node_modules/log4js/types/log4js.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1641,6 +1644,57 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/ts3.2/globals.d.ts",
         "./node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/@types/caseless/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/request/node_modules/form-data/index.d.ts": [
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/tough-cookie/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/request/index.d.ts": [
+        "./node_modules/@types/caseless/index.d.ts",
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/https.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/request/node_modules/form-data/index.d.ts",
+        "./node_modules/@types/node/net.d.ts",
+        "./node_modules/@types/tough-cookie/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/tls.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/jira-client/index.d.ts": [
+        "./node_modules/@types/request/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/log4js/types/log4js.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": [
+        "./node_modules/log4js/types/log4js.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./node_modules/@types/nodemailer/lib/dkim.d.ts": [
         "./node_modules/@types/node/ts3.2/index.d.ts",
@@ -1930,11 +1984,34 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./node_modules/neverthrow/dist/result.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/neverthrow/dist/chain.d.ts": [
+        "./node_modules/neverthrow/dist/result.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/neverthrow/dist/index.d.ts": [
+        "./node_modules/neverthrow/dist/result.d.ts",
+        "./node_modules/neverthrow/dist/chain.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/jira/request-creation-mapper.ts": [
+        "./src/jira/jira-client.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/jira/jira-client.ts": [
         "./node_modules/@types/node/https.d.ts",
         "./node_modules/builder-pattern/dist/src/index.d.ts",
         "./src/config/thales.ts",
+        "./node_modules/@types/jira-client/index.d.ts",
         "./node_modules/@jsincubator/core/dist/index.d.ts",
+        "./node_modules/neverthrow/dist/index.d.ts",
+        "./src/jira/request-creation-mapper.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1954,6 +2031,9 @@
         "./node_modules/builder-pattern/dist/src/index.d.ts",
         "./src/jira/jira-query-builder.ts",
         "./src/jira/jira-client.ts",
+        "./src/jira/request-creation-mapper.ts",
+        "./src/abstract/jira-command.ts",
+        "./src/config/thales.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1967,6 +2047,8 @@
         "./src/jira/jira-client.ts",
         "./src/abstract/jira-command.ts",
         "./node_modules/@jsincubator/core/dist/index.d.ts",
+        "./node_modules/neverthrow/dist/index.d.ts",
+        "./src/jira/request-creation-mapper.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -1997,10 +2079,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./node_modules/@types/asciichart/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/caseless/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2644,39 +2722,6 @@
         "./node_modules/@types/inquirer/lib/utils/readline.d.ts",
         "./node_modules/@types/inquirer/lib/utils/screen-manager.d.ts",
         "./node_modules/@types/inquirer/lib/utils/utils.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/request/node_modules/form-data/index.d.ts": [
-        "./node_modules/@types/node/stream.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/tough-cookie/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/request/index.d.ts": [
-        "./node_modules/@types/caseless/index.d.ts",
-        "./node_modules/@types/node/stream.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/https.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/request/node_modules/form-data/index.d.ts",
-        "./node_modules/@types/node/net.d.ts",
-        "./node_modules/@types/tough-cookie/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/tls.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/jira-client/index.d.ts": [
-        "./node_modules/@types/request/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3436,6 +3481,57 @@
         "./node_modules/@types/node/ts3.2/globals.d.ts",
         "./node_modules/@types/node/util.d.ts"
       ],
+      "./node_modules/@types/caseless/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/request/node_modules/form-data/index.d.ts": [
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/tough-cookie/index.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/request/index.d.ts": [
+        "./node_modules/@types/caseless/index.d.ts",
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/http.d.ts",
+        "./node_modules/@types/node/https.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/request/node_modules/form-data/index.d.ts",
+        "./node_modules/@types/node/net.d.ts",
+        "./node_modules/@types/tough-cookie/index.d.ts",
+        "./node_modules/@types/node/url.d.ts",
+        "./node_modules/@types/node/tls.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/jira-client/index.d.ts": [
+        "./node_modules/@types/request/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/log4js/types/log4js.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": [
+        "./node_modules/log4js/types/log4js.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./node_modules/@types/nodemailer/lib/dkim.d.ts": [
         "./node_modules/@types/node/ts3.2/index.d.ts",
         "./node_modules/@types/node/util.d.ts",
@@ -3583,6 +3679,53 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts": [
+        "./node_modules/@types/nodemailer/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/email/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./node_modules/pg-types/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
@@ -3597,12 +3740,112 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts": [
+        "./node_modules/@types/pg/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/db/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/async/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/date/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/array/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/output/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/env/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/src/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/email/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/db/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/async/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/date/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/array/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/output/index.d.ts",
+        "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@jsincubator/core/dist/index.d.ts": [
+        "./node_modules/@jsincubator/core/dist/src/index.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/neverthrow/dist/result.d.ts": [
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/neverthrow/dist/chain.d.ts": [
+        "./node_modules/neverthrow/dist/result.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/neverthrow/dist/index.d.ts": [
+        "./node_modules/neverthrow/dist/result.d.ts",
+        "./node_modules/neverthrow/dist/chain.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/jira/request-creation-mapper.ts": [
+        "./src/jira/jira-client.ts"
+      ],
+      "./src/jira/jira-client.ts": [
+        "./node_modules/neverthrow/dist/index.d.ts"
+      ],
       "./src/abstract/jira-command.ts": [
         "./node_modules/@oclif/command/lib/index.d.ts"
       ],
       "./src/commands/add.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts"
+        "./src/abstract/jira-command.ts"
       ],
       "./src/commands/import.ts": [
         "./node_modules/@oclif/parser/lib/flags.d.ts",
@@ -3610,8 +3853,6 @@
         "./src/abstract/jira-command.ts"
       ],
       "./src/commands/list.ts": [
-        "./node_modules/@oclif/parser/lib/flags.d.ts",
-        "./node_modules/@oclif/command/lib/index.d.ts",
         "./src/abstract/jira-command.ts"
       ],
       "./node_modules/@types/bluebird/index.d.ts": [
@@ -3631,10 +3872,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./node_modules/@types/asciichart/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/caseless/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -4281,39 +4518,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./node_modules/@types/request/node_modules/form-data/index.d.ts": [
-        "./node_modules/@types/node/stream.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/tough-cookie/index.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/request/index.d.ts": [
-        "./node_modules/@types/caseless/index.d.ts",
-        "./node_modules/@types/node/stream.d.ts",
-        "./node_modules/@types/node/http.d.ts",
-        "./node_modules/@types/node/https.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/request/node_modules/form-data/index.d.ts",
-        "./node_modules/@types/node/net.d.ts",
-        "./node_modules/@types/tough-cookie/index.d.ts",
-        "./node_modules/@types/node/url.d.ts",
-        "./node_modules/@types/node/tls.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@types/jira-client/index.d.ts": [
-        "./node_modules/@types/request/index.d.ts",
-        "./node_modules/@types/node/fs.d.ts",
-        "./node_modules/@types/node/ts3.2/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts": [
         "./node_modules/@types/lodash/ts3.1/index.d.ts",
         "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
@@ -4539,184 +4743,9 @@
       "./node_modules/@types/sinon/index.d.ts": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/log4js/types/log4js.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts": [
-        "./node_modules/log4js/types/log4js.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/email/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/db/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/async/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/date/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/array/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/output/index.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts": [
-        "./node_modules/@types/nodemailer/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/email/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts": [
-        "./node_modules/@types/pg/index.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/db/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/async/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/date/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/array/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/output/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/env/index.d.ts": [
-        "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts",
-        "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "./node_modules/log4js/types/log4js.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/index.d.ts",
-      "./src/commands/list.ts",
-      "./src/commands/import.ts",
-      "./src/jira/jira-client.ts",
-      "./src/commands/add.ts",
-      "./src/abstract/jira-command.ts",
-      "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/email/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/db/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/async/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/date/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/array/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/output/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
-      "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts",
-      "./src/jira/jira-query-builder.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.es2015.d.ts",
       "./node_modules/typescript/lib/lib.es2016.d.ts",
@@ -4818,6 +4847,14 @@
       "./node_modules/@types/node/ts3.2/util.d.ts",
       "./node_modules/@types/node/ts3.2/globals.d.ts",
       "./node_modules/@types/node/ts3.2/index.d.ts",
+      "./node_modules/@types/caseless/index.d.ts",
+      "./node_modules/@types/request/node_modules/form-data/index.d.ts",
+      "./node_modules/@types/tough-cookie/index.d.ts",
+      "./node_modules/@types/request/index.d.ts",
+      "./node_modules/@types/jira-client/index.d.ts",
+      "./node_modules/log4js/types/log4js.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/logger/logger.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/logger/index.d.ts",
       "./node_modules/@types/nodemailer/lib/dkim.d.ts",
       "./node_modules/@types/nodemailer/lib/mailer/mail-message.d.ts",
       "./node_modules/@types/nodemailer/lib/xoauth2.d.ts",
@@ -4832,14 +4869,48 @@
       "./node_modules/@types/nodemailer/lib/smtp-transport.d.ts",
       "./node_modules/@types/nodemailer/lib/stream-transport.d.ts",
       "./node_modules/@types/nodemailer/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/email/mailer.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/email/mail-to.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/email/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-reader.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/amqp/amqp-writer.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/amqp/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/shell/shell.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/shell/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/scheduler/scheduler.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/scheduler/index.d.ts",
       "./node_modules/pg-types/index.d.ts",
       "./node_modules/@types/pg/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/db/pg-connector.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/db/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/async/async-executer.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/async/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/date/date-utils.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/date/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/array/array-utils.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/array/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/output/output-processor.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/output/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/env/env-loader.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/env/config-loader.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/env/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/src/index.d.ts",
+      "./node_modules/@jsincubator/core/dist/index.d.ts",
+      "./node_modules/neverthrow/dist/result.d.ts",
+      "./node_modules/neverthrow/dist/chain.d.ts",
+      "./node_modules/neverthrow/dist/index.d.ts",
+      "./src/jira/request-creation-mapper.ts",
+      "./src/jira/jira-client.ts",
+      "./src/abstract/jira-command.ts",
+      "./src/jira/jira-query-builder.ts",
+      "./src/commands/add.ts",
       "./src/utils/csv-parser.ts",
+      "./src/commands/import.ts",
+      "./src/commands/list.ts",
       "./node_modules/@types/bluebird/index.d.ts",
       "./node_modules/@types/amqplib/properties.d.ts",
       "./node_modules/@types/amqplib/index.d.ts",
       "./node_modules/@types/asciichart/index.d.ts",
-      "./node_modules/@types/caseless/index.d.ts",
       "./node_modules/@types/chai/index.d.ts",
       "./node_modules/@types/child-process-promise/index.d.ts",
       "./node_modules/@types/color-name/index.d.ts",
@@ -4932,10 +5003,6 @@
       "./node_modules/@types/inquirer/lib/utils/readline.d.ts",
       "./node_modules/@types/inquirer/lib/utils/utils.d.ts",
       "./node_modules/@types/inquirer/index.d.ts",
-      "./node_modules/@types/request/node_modules/form-data/index.d.ts",
-      "./node_modules/@types/tough-cookie/index.d.ts",
-      "./node_modules/@types/request/index.d.ts",
-      "./node_modules/@types/jira-client/index.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/common.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/array.d.ts",
       "./node_modules/@types/lodash/ts3.1/common/collection.d.ts",

@@ -8,7 +8,7 @@ const excludedComponentsNames: string[] = config.components.exclude
 
 export interface Feature {
     data: any[],
-    flag: any,
+    // flag: any,
     description: string
 }
 
@@ -16,46 +16,49 @@ export default abstract class JiraCommand extends Command {
 
     boards: Feature = {
         data: [],
-        flag: '',
         description: '' 
-    };
+    }
     components: Feature = {
         data: [],
-        flag: '',
         description: '' 
-    };
+    }
     people: Feature = {
         data: [],
-        flag: '',
         description: '' 
-    };
-
+    }
     issueTypes: Feature = {
         data: [],
-        flag: '',
+        description: ''
+    }
+    issueStatus: Feature  = {
+        data: [],
         description: ''
     }
     priorities: Feature = {
         data: [],
-        flag: '',
+        description: ''
+    }
+    versions: Feature = {
+        data: [],
         description: ''
     }
 
     async init() {
-
         super.init()
         await this._initData()
     }
 
     _initData = async () => {
 
-        const results: any[] = await Promise.all([jiraClient.getAllBoards(), jiraClient.getComponents(), jiraClient.getIssueTypes(), jiraClient.getPriorities()])
+        const results: any[] = await Promise.all([jiraClient.getAllBoards(), jiraClient.getComponents(), jiraClient.getIssueTypes(), jiraClient.getPriorities(), jiraClient.getIssuesStatus(), jiraClient.getVersions()])
 
         const boardData: Board[] = results[0] 
         const componentsData: any[] = results[1]
         const peopleData: any[] = config.team.people
         const issueTypesData: string[] = results[2]
         const prioritiesData: string[] = results[3]
+        const issueStatusData: string[] = results[4]
+        const versionsData: string[] = results[5]
 
         const defaultBoardIndex: string = boardData.reduce((acc: string, cur: Board, index: number) => {
 
@@ -71,39 +74,52 @@ export default abstract class JiraCommand extends Command {
 
         this.boards = {
             data: boardData,
-            flag: flags.string({ char: 'b', description: `board index`, options: Object.keys(boardData), default: defaultBoardIndex }),
             description: `Boards Index:
 ${boardData.map((cur: Board, index: number) => `${index} => ${cur.name}\n`)}`
         }
 
         this.components = {
             data: componentsData,
-            flag: flags.string({ char: 'c', description: `components index`, options: Object.keys(componentsData) }),
             description: `Components:
 ${componentsData.map((cur: Component, index: number) => `${index} => ${cur.name}\n`)}`
         }
 
         this.people = {
             data: peopleData,
-            flag: flags.string({ char: 'b', description: `board index`, options: peopleData.map((cur: any) => cur.tgi), default: peopleData[0].tgi}), 
             description: `People:
-${peopleData.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}`
+${peopleData.map((cur: any, index: number) => `${index} => ${cur.name}\n`)}`
         }
 
         this.issueTypes = {
             data: issueTypesData,
-            flag: flags.string({ char: 't', description: `story types index`, options: Object.keys(issueTypesData), default: '0'}),
             description: `Issue types:
 ${issueTypesData.map((cur: string, index: number) => `${index} => ${cur}\n`)}`
         }
 
+        this.issueStatus = {
+            data: issueStatusData,
+            description: `Issue status:
+${issueStatusData.map((cur: string, index: number) => `${index} => ${cur}\n`)}`
+        }
+
         this.priorities = {
             data: prioritiesData,
-            flag: flags.string({ char: 't', description: `priority index`, options: Object.keys(prioritiesData), default: '0'}),
             description: `Priorities:
 ${prioritiesData.map((cur: string, index: number) => `${index} => ${cur}\n`)}`
         }
 
+        this.versions = {
+            data: versionsData,
+            description: `Versions:
+${versionsData.map((cur: string, index: number) => `${cur}\n`)}`
+        }
+    }
 
+    getNamesByIndexes = (data: any[], delimiter: string, indexesStr: string): string => {
+
+        const indexes: string[] = indexesStr.split(delimiter) 
+        const names: string[] = indexes.map((cur: string) => data[+cur])
+
+        return names.join(delimiter)
     }
 }

@@ -1,10 +1,10 @@
 import { Command, flags } from '@oclif/command'
 import { csvParser } from '../utils/csv-parser'
-import { jiraClient, TaskRequestCreation, TaskType, TestRequestCreation } from '../jira/jira-client'
+import { jiraClient, TaskRequestCreation } from '../jira/jira-client'
 import JiraCommand from '../abstract/jira-command'
 import { Logger, createLogger } from '@jsincubator/core'
 import { Result } from 'neverthrow'
-import { ResponseData } from '../jira/jira-client'
+import * as requestCreationMapper from '../jira/request-creation-mapper'
 
 const logger: Logger = createLogger(`jira.commands.import`)
 
@@ -24,10 +24,10 @@ export default class Import extends JiraCommand {
     Import.description = `import tasks from csv
 
 Components:
-${this.components.data.map((cur: any, index: number) => `${cur.name}\n`)}
+${this.components.data.map((cur: string) => `${cur}\n`)}
 
 People:
-${this.people.data.map((cur: any, index: number) => `${cur.tgi} => ${cur.name}\n`)}
+${this.people.data.map((cur: any, index: number) => `${cur.name}\n`)}
 
 Issue types:
 ${this.issueTypes.data.map((cur: string) => `${cur}\n`)}
@@ -44,22 +44,8 @@ ${this.priorities.data.map((cur: string) => `${cur}\n`)}`
 
     logger.info(`parsing file %s...`, flags.file)
 
-    const csvTasks: any = (await csvParser.parse(flags.file, flags.rowDelimiter)).filter((el: any) => el && el.summary && el.summary !== '')
-
-    const tasks: (TaskRequestCreation | TestRequestCreation)[] = csvTasks.map((el: any): TaskRequestCreation | TestRequestCreation => {
-
-      return {
-        ...el,
-        summary: el.summary,
-        versions: el.versions ? el.versions.split(delimiter) : [],
-        fixVersions: el.fixVersions ? el.fixVersions.split(delimiter) : [],
-        labels: el.labels ? el.labels.split(delimiter) : [],
-        assignee: el.assignee || '',
-        storyPoints: el.storyPoints === '' ? undefined : +el.storyPoints,
-        components: el.components.split(delimiter),
-        description: el.description.split('\\n')
-      }
-    })
+    const csvTasks: any = (await csvParser.parse(flags.file, flags.rowDelimiter))
+    const tasks: (TaskRequestCreation)[] = csvTasks.map((row: any): TaskRequestCreation => requestCreationMapper.fromCsvRow(row, delimiter))
 
     logger.info(`creating tasks...`)
 
@@ -67,23 +53,18 @@ ${this.priorities.data.map((cur: string) => `${cur}\n`)}`
 
     for (let index = 0; index < tasks.length; index++) {
 
-      const task: TaskRequestCreation | TestRequestCreation = tasks[index]
-      const taskCreationFunction: Function = task.type === 'Test' ? jiraClient.addTest : jiraClient.addTask;
+      const task: TaskRequestCreation = tasks[index]
+      const result: Result<any, Error> = await jiraClient.addTask(task)
 
-      const result: Result<ResponseData, Error> = await taskCreationFunction(task)
-
-      if (result.isOk()) {
-        logger.info(`created task '%s' with key %s`, task.summary, result.value.result)
-      } else {
+      if(result.isErr()) {
         creationErrors.push(`record:${index + 1} summary:${task.summary}`)
-        logger.error(`error creating task '%s': %s`, task.summary, result.error)
       }
     }
 
     if (creationErrors.length > 0) {
-      logger.info(`aggregated faliure to create the following tasks (see errors above):`)
+      logger.error(`aggregated faliure to create the following tasks (see errors above):`)
       creationErrors.forEach((cur: string) => {
-        logger.info(cur)
+        logger.error(cur)
       })
     }
   }

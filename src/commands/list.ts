@@ -5,8 +5,6 @@ const Table = require('cli-table')
 
 import config from '../config/thales'
 import { Logger, createLogger } from '@jsincubator/core'
-// import { people, peopleDesc, indexesToTGIs } from '../constants/team'
-// import { status, statusDesc } from '../constants/jira'
 import { Builder, JiraQueryBuilder, Operation } from '../jira/jira-query-builder'
 import { jiraClient, JiraClient, Board } from '../jira/jira-client'
 import JiraCommand from '../abstract/jira-command'
@@ -15,32 +13,25 @@ const logger: Logger = createLogger(`jira.commands.list`)
 
 export default class List extends JiraCommand {
 
-  static flags = {
-    help: flags.help({ char: 'h' }),
-    people: flags.string({ char: 'p', description: `assignee`, required: false }),
-    // status: flags.string({ char: 's', description: `task status`, required: false, options: Object.keys(status) }),
-    openSprints: flags.boolean({ char: 'o', description: `only open sprints`, required: false }),
-    // work: flags.string({ char: 'w', description: `sprint name`, required: false }),
-    boardIndex: flags.string({ char: 'b', required: true })
-  }
-
   async init() {
 
     await super.init()
 
     List.description = `search for issues by filters
-    
-${this.boards.description}`
-    // People flag description
-    // ${peopleDesc}
-    // Status flag description
-    // ${statusDesc}
-    // ${JiraCommand.description}`
 
-    // List.flags = {
-    //   ...List.flags,
-    //   ...JiraCommand.flags
-    // }
+${this.boards.description}
+${this.people.description}
+${this.issueStatus.description}`
+
+    List.flags = {
+      help: flags.help({ char: 'h' }),
+      people: flags.string({ char: 'p', description: `assignee`, required: false }),
+      status: flags.string({ char: 's', description: `issue status index`, options: Object.keys(this.issueStatus.data), default: '0'}),
+      openSprints: flags.boolean({ char: 'o', description: `only open sprints`, required: false }),
+      // work: flags.string({ char: 'w', description: `sprint name`, required: false }),
+      boardIndex: flags.string({ char: 'b', required: true })
+    }
+
   }
 
   async run() {
@@ -54,50 +45,41 @@ ${this.boards.description}`
     const jiraQueryBuilder: JiraQueryBuilder = Builder()
 
     if (flags.people) {
-      // const peopleTGI: string[] = indexesToTGIs(flags.people.split(','))
-      // jiraQueryBuilder.paramIn('assignee', `(${peopleTGI.join(',')})`)
+
       const peopleIndexes: string[] = flags.people.split(',')
       const peopleTGIs: string[] = peopleIndexes.map((cur: string) => config.team.people[+cur].tgi)
       jiraQueryBuilder.paramIn('assignee', `(${peopleTGIs.join(',')})`)
     }
 
     if (flags.status) {
-      jiraQueryBuilder.paramEquals('status', status[+flags.status])
+      jiraQueryBuilder.paramEquals('status', this.issueStatus.data[+flags.status])
     }
 
-    if (flags.work) {
-      jiraQueryBuilder.paramIn('sprint', `("${flags.work}")`)
-    }
+    // if (flags.work) {
+    //   jiraQueryBuilder.paramIn('sprint', `("${flags.work}")`)
+    // }
 
     if (flags.openSprints) {
       jiraQueryBuilder.paramIn('sprint', 'openSprints()')
     }
 
-    const boardId: number = this.boards.data[flags.boardIndex].id
+    const boardId: string = this.boards.data[flags.boardIndex].id
     const jiraQuery: string = jiraQueryBuilder.build()
 
     const table: any = await this.getIssuesTable(boardId, jiraQuery)
     console.log(table.toString())
   }
 
-  async getIssuesTable(boardId: number, jiraQuery: string): Promise<any> {
+  async getIssuesTable(boardId: string, jiraQuery: string): Promise<any> {
 
-    // try {
+    const response = await jiraClient.fetchIssuesForBoard(boardId, jiraQuery)
 
-    const response: any = await jiraClient.fetchIssuesForBoard(boardId, jiraQuery)
-
-    if (response.error) {
-      logger.error(`error getting issues:%s`, response.error.message)
+    if (response.isErr()) {
+      logger.error(`error getting issues:%s`, response.error)
     } else {
-      logger.info(`got %d issues`, response.issues.length)
+      logger.info(`got %d issues`, response.value.issues.length)
+      return this.issuesToTable(response.value.issues)
     }
-
-    // console.log(response.issues.filter((cur: any) => cur.key === 'VLBSFI_GDP_AG-7074')[0].fields.priority)
-    return this.issuesToTable(response.issues)
-
-    // } catch (err) {
-    //   console.error(err)
-    // }
   }
 
   issuesToTable(issues: any): any {

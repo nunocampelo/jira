@@ -17,7 +17,7 @@ export default {
             startAt: 0,
             maxResults: 200,
             validateQuery: true,
-            fields: null
+            fields: undefined 
         }
     },
     team: {

@@ -65,39 +65,9 @@ USAGE
 
 ## `jira add`
 
-task creation
-
 ```
 USAGE
   $ jira add
-
-OPTIONS
-  -a, --assignee=assignee        task assignee
-  -b, --backend                  includes backend
-  -c, --component=component      component name
-
-  -d, --description=description  [default: h2. TODO,* See subtasks] task description (lines are splitted using the
-                                 delimiter flag)
-
-  -e, --epic=epic                epic key
-
-  -f, --frontend                 includes frontend
-
-  -h, --help                     show CLI help
-
-  -l, --delimiter=delimiter      [default: ,] delimiter to split with
-
-  -o, --automation               includes UATs
-
-  -r, --requirements             includes requirements
-
-  -s, --summary=summary          (required) task summary
-
-  -t, --tests                    includes SDT tests update
-
-  -t, --type=type                [default: Story] issue type
-
-  -v, --versions=versions        [default: 1.2.0] version
 ```
 
 _See code: [src\commands\add.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\add.ts)_
@@ -139,12 +109,6 @@ _See code: [src\commands\import.ts](https://github.com/script/jira/blob/v1.0.0/s
 ```
 USAGE
   $ jira list
-
-OPTIONS
-  -b, --boardIndex=boardIndex  (required)
-  -h, --help                   show CLI help
-  -o, --openSprints            only open sprints
-  -p, --people=people          assignee
 ```
 
 _See code: [src\commands\list.ts](https://github.com/script/jira/blob/v1.0.0/src\commands\list.ts)_
