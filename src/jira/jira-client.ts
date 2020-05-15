@@ -1,3 +1,4 @@
+import { Expose, Exclude, Transform } from 'class-transformer'
 import { request } from 'https'
 const path = require('path')
 import { Builder } from 'builder-pattern'
@@ -158,20 +159,33 @@ export enum Severity {
   Blocking, Major, Minor
 }
 
-export interface TaskRequestCreation {
-  summary: string
-  type: string
-  project: string
-  labels?: string[]
-  description?: string[]
-  storyPoints?: number
+@Exclude()
+export class TaskRequestCreation {
+  @Expose() summary: string
+  @Expose() type: string
+  @Expose() project: string
+  @Expose() labels?: string[]
+  @Expose() description?: string[]
+  @Expose() storyPoints?: number
+ 
+  @Expose({toClassOnly: true})
+  @Expose({name: 'custom', toPlainOnly: true}) 
+  // @Transform((value: s) => value, { toPlainOnly: true })
   epic?: string
-  components?: string[]
-  assignee?: string
-  fixVersions?: string[]
-  versions?: string[]
-  priority?: string
-  testRepositoryPath?: string,
+  
+  @Expose() components?: string[]
+  @Expose() assignee?: string
+  @Expose() fixVersions?: string[]
+  @Expose() versions?: string[]
+  @Expose() priority?: string
+  @Expose() testRepositoryPath?: string
+
+  constructor(project: string, summary: string, type: string) {
+    this.project = project
+    this.summary = summary
+    this.type = type
+  }
+
 }
 
 export const jiraClient: JiraClient = {

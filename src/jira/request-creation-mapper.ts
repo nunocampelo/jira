@@ -1,4 +1,26 @@
 import { TaskRequestCreation } from './jira-client'
+import { plainToClass, classToPlain } from 'class-transformer'
+
+export const test = () => {
+    
+    const result: TaskRequestCreation = plainToClass(TaskRequestCreation, {
+        summary: 'summary',
+        project: 'project',
+        type: 'type',
+        not: 'not',
+        epic: 'epic',
+        labels: ['one', 'two']
+    }, { excludeExtraneousValues: true  })
+
+
+    console.log('task', result)
+   
+    
+    const json: any = classToPlain(result)
+
+
+    console.log('json', json)
+}
 
 export const fromCliFlags = (flags: any, delimiter: string = ','): TaskRequestCreation => {
 
@@ -8,7 +30,7 @@ export const fromCliFlags = (flags: any, delimiter: string = ','): TaskRequestCr
         project: flags.project
     }
 
-    if(flags.epic) {
+    if (flags.epic) {
         request.epic = flags.epic
     }
 
@@ -55,7 +77,7 @@ export const fromCsvRow = (row: any, delimiter: string = ','): TaskRequestCreati
         project: row.project
     }
 
-    if(row.epic) {
+    if (row.epic) {
         request.epic = row.epic
     }
 
@@ -87,7 +109,7 @@ export const fromCsvRow = (row: any, delimiter: string = ','): TaskRequestCreati
         request.description = row.description.split('\\n')
     }
 
-    if(row.testRepositoryPath) {
+    if (row.testRepositoryPath) {
         request.testRepositoryPath = row.testRepositoryPath
     }
 
@@ -137,8 +159,8 @@ export const toApiJson = (request: TaskRequestCreation): any => {
         }
     }
 
-    if(request.labels) {
-       task.fields.labels = request.labels 
+    if (request.labels) {
+        task.fields.labels = request.labels
     }
 
     // if (request.parentKey) {
@@ -181,7 +203,7 @@ export const toApiJson = (request: TaskRequestCreation): any => {
         }
     }
 
-    if(request.testRepositoryPath) {
+    if (request.testRepositoryPath) {
         task.fields.customfield_10611 = request.testRepositoryPath
     }
 

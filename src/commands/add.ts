@@ -6,6 +6,7 @@ import { jiraClient, JiraClient, TaskRequestCreation } from '../jira/jira-client
 import * as requestCreationMapper from '../jira/request-creation-mapper'
 import JiraCommand from '../abstract/jira-command'
 import config from '../config/thales'
+import { test } from '../jira/request-creation-mapper';
 
 export default class Add extends JiraCommand {
 
@@ -13,12 +14,14 @@ export default class Add extends JiraCommand {
 
     await super.init()
 
-    Add.description = `task creation
+    test()
 
-${this.people.description}
-${this.issueStatus.description}
-${this.components.description}
-${this.versions.description}`
+//     Add.description = `task creation
+
+// ${this.people.description}
+// ${this.issueStatus.description}
+// ${this.components.description}
+// ${this.versions.description}`
 
     Add.flags = {
       help: flags.help({ char: 'h' }),
