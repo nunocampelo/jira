@@ -6,7 +6,6 @@ import { jiraClient, JiraClient, TaskRequestCreation } from '../jira/jira-client
 import * as requestCreationMapper from '../jira/request-creation-mapper'
 import JiraCommand from '../abstract/jira-command'
 import config from '../config/thales'
-import { test } from '../jira/request-creation-mapper';
 
 export default class Add extends JiraCommand {
 
@@ -14,28 +13,27 @@ export default class Add extends JiraCommand {
 
     await super.init()
 
-    test()
+    Add.description = `task creation
 
-//     Add.description = `task creation
-
-// ${this.people.description}
-// ${this.issueStatus.description}
-// ${this.components.description}
-// ${this.versions.description}`
+${this.people.description}
+${this.issueStatus.description}
+${this.components.description}
+${this.versions.description}`
 
     Add.flags = {
       help: flags.help({ char: 'h' }),
       summary: flags.string({ char: 's', description: `task summary`, required: true }),
       type: flags.string({ char: 't', description: `issue type`, required: true, options: this.issueTypes.data }),
-      project: flags.string({ char: 'p', description: `jira project`, required: true, default: config.jira.project.name}),
-      assignee: flags.string({ char: 'a', description: `task assignee`, required: false, options: Object.keys(this.people.data)}),
-      description: flags.string({ char: 'd', description: `task description (lines are splitted using \n)`, required: false }),
-      components: flags.string({ char: 'c', description: `component names (split by the delimiter character)`, required: false }),
+      project: flags.string({ char: 'p', description: `jira project`, required: true, default: config.jira.project.name }),
+      assignee: flags.string({ char: 'a', description: `task assignee`, required: false, options: Object.keys(this.people.data) }),
+      description: flags.string({ char: 'd', description: `task description (lines are splitted using rowDelimiter)`, required: false }),
+      components: flags.string({ char: 'c', description: `component names (split by the delimiter)`, required: false }),
       epic: flags.string({ char: 'e', description: `epic key`, required: false }),
-      versions: flags.string({ char: 'v', description: `issue versions (split by the delimiter character)`, required: false }),
-      fixVersions: flags.string({ char: 'f', description: `issue fix versions (split by the delimiter character)`, required: false}),
-      delimiter: flags.string({ char: 'l', description: `delimiter to split with`, required: false, default: ',' }),
-    } 
+      versions: flags.string({ char: 'v', description: `issue versions (split by the delimiter)`, required: false }),
+      fixVersions: flags.string({ char: 'f', description: `issue fix versions (split by the delimiter)`, required: false }),
+      delimiter: flags.string({ char: 'l', description: `delimiter to split each field value with`, required: false, default: ',' }),
+      newLineDelimiter: flags.string({ char: 'n', description: `field value new line delimiter`, required: false, default: '\\' }),
+    }
   }
 
   async run() {
@@ -49,11 +47,11 @@ export default class Add extends JiraCommand {
       flags.assignee = config.team.people[flags.assignee].tgi
     }
 
-    if(flags.components){
+    if (flags.components) {
       flags.components = this.getNamesByIndexes(this.components.data, flags.delimiter, flags.components)
     }
-    
-    const request: TaskRequestCreation = requestCreationMapper.fromCliFlags(flags, flags.delimiter)
+
+    const request: TaskRequestCreation = requestCreationMapper.fromCliFlags(flags, flags.delimiter, flags.newLineDelimiter)
     const response = await jiraClient.addTask(request)
   }
 }

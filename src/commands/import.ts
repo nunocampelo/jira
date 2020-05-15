@@ -13,8 +13,9 @@ export default class Import extends JiraCommand {
   static flags = {
     help: flags.help({ char: 'h' }),
     file: flags.string({ char: 'f', description: `csv file path to import`, required: true }),
+    delimiter: flags.string({ char: 'd', description: `delimiter to split each field value with`, required: false, default: ',' }),
     rowDelimiter: flags.string({ char: 'r', description: `csv fields delimiter`, required: false, default: ',' }),
-    delimiter: flags.string({ char: 'd', description: `inside field value delimiter`, required: false, default: ',' }),
+    newLineDelimiter: flags.string({ char: 'n', description: `field value new line delimiter`, required: false, default: '\\' }),
   }
 
   async init() {
@@ -40,12 +41,11 @@ ${this.priorities.data.map((cur: string) => `${cur}\n`)}`
   async run() {
 
     const { args, flags } = this.parse(Import)
-    const delimiter: string = flags.delimiter
 
     logger.info(`parsing file %s...`, flags.file)
 
     const csvTasks: any = (await csvParser.parse(flags.file, flags.rowDelimiter))
-    const tasks: (TaskRequestCreation)[] = csvTasks.map((row: any): TaskRequestCreation => requestCreationMapper.fromCsvRow(row, delimiter))
+    const tasks: (TaskRequestCreation)[] = csvTasks.map((row: any): TaskRequestCreation => requestCreationMapper.fromCsvRow(row, flags.delimiter, flags.newLineDelimiter))
 
     logger.info(`creating tasks...`)
 

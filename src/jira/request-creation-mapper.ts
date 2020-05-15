@@ -1,28 +1,6 @@
 import { TaskRequestCreation } from './jira-client'
-import { plainToClass, classToPlain } from 'class-transformer'
 
-export const test = () => {
-    
-    const result: TaskRequestCreation = plainToClass(TaskRequestCreation, {
-        summary: 'summary',
-        project: 'project',
-        type: 'type',
-        not: 'not',
-        epic: 'epic',
-        labels: ['one', 'two']
-    }, { excludeExtraneousValues: true  })
-
-
-    console.log('task', result)
-   
-    
-    const json: any = classToPlain(result)
-
-
-    console.log('json', json)
-}
-
-export const fromCliFlags = (flags: any, delimiter: string = ','): TaskRequestCreation => {
+export const fromCliFlags = (flags: any, delimiter: string, newLineDelimiter: string): TaskRequestCreation => {
 
     const request: TaskRequestCreation = {
         summary: flags.summary,
@@ -59,7 +37,7 @@ export const fromCliFlags = (flags: any, delimiter: string = ','): TaskRequestCr
     }
 
     if (flags.description) {
-        request.description = flags.description.split('\\n')
+        request.description = flags.description.split(newLineDelimiter)
     }
 
     if (flags.priority) {
@@ -69,7 +47,7 @@ export const fromCliFlags = (flags: any, delimiter: string = ','): TaskRequestCr
     return request
 }
 
-export const fromCsvRow = (row: any, delimiter: string = ','): TaskRequestCreation => {
+export const fromCsvRow = (row: any, delimiter: string, newLineDelimiter: string): TaskRequestCreation => {
 
     const request: TaskRequestCreation = {
         summary: row.summary,
@@ -106,7 +84,7 @@ export const fromCsvRow = (row: any, delimiter: string = ','): TaskRequestCreati
     }
 
     if (row.description) {
-        request.description = row.description.split('\\n')
+        request.description = row.description.split(newLineDelimiter)
     }
 
     if (row.testRepositoryPath) {

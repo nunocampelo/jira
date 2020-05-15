@@ -159,26 +159,20 @@ export enum Severity {
   Blocking, Major, Minor
 }
 
-@Exclude()
 export class TaskRequestCreation {
-  @Expose() summary: string
-  @Expose() type: string
-  @Expose() project: string
-  @Expose() labels?: string[]
-  @Expose() description?: string[]
-  @Expose() storyPoints?: number
- 
-  @Expose({toClassOnly: true})
-  @Expose({name: 'custom', toPlainOnly: true}) 
-  // @Transform((value: s) => value, { toPlainOnly: true })
+  summary: string
+  type: string
+  project: string
+  labels?: string[]
+  description?: string[]
+  storyPoints?: number
   epic?: string
-  
-  @Expose() components?: string[]
-  @Expose() assignee?: string
-  @Expose() fixVersions?: string[]
-  @Expose() versions?: string[]
-  @Expose() priority?: string
-  @Expose() testRepositoryPath?: string
+  components?: string[]
+  assignee?: string
+  fixVersions?: string[]
+  versions?: string[]
+  priority?: string
+  testRepositoryPath?: string
 
   constructor(project: string, summary: string, type: string) {
     this.project = project
