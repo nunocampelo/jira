@@ -3,7 +3,7 @@ import { Command, flags } from '@oclif/command'
 const chalk = require('chalk')
 const Table = require('cli-table')
 
-import config from '../config/thales'
+import config from '../config'
 import { Logger, createLogger } from '@jsincubator/core'
 import { Builder, JiraQueryBuilder, Operation } from '../jira/jira-query-builder'
 import { jiraClient, JiraClient, Board } from '../jira/jira-client'

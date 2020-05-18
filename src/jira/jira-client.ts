@@ -2,7 +2,7 @@ import { Expose, Exclude, Transform } from 'class-transformer'
 import { request } from 'https'
 const path = require('path')
 import { Builder } from 'builder-pattern'
-import config from '../config/thales'
+import config from '../config/'
 
 import * as JiraApi from 'jira-client'
 import { Logger, createLogger } from '@jsincubator/core'

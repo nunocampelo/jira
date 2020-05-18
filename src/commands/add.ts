@@ -5,7 +5,7 @@ import { Builder as JQBuilder, JiraQueryBuilder, Operation } from '../jira/jira-
 import { jiraClient, JiraClient, TaskRequestCreation } from '../jira/jira-client'
 import * as requestCreationMapper from '../jira/request-creation-mapper'
 import JiraCommand from '../abstract/jira-command'
-import config from '../config/thales'
+import config from '../config'
 
 export default class Add extends JiraCommand {
 

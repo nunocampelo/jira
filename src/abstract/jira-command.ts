@@ -2,7 +2,7 @@ import { Command, flags } from '@oclif/command'
 
 const path = require('path')
 import { jiraClient, JiraClient, Board, Component } from '../jira/jira-client'
-import config from '../config/thales'
+import config from '../config'
 
 const excludedComponentsNames: string[] = config.components.exclude
 
