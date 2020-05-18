@@ -1,2 +1,0 @@
-project,type,summary,description,components,fixVersions,labels,testRepositoryPath,priority
-VLBSFI_GDP_AG,Test,REUSEME,this is a sample\nmultiline\ndescription,User Manager,"1.4,1.3.0","TEAM-A,TEAM-B",/umgr,Low
