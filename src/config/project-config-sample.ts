@@ -1,5 +1,8 @@
-require('dotenv').config()
+import * as path from 'path'
+
 import { Logger, createLogger } from '@jsincubator/core'
+
+require('dotenv').config({path: path.resolve(`${__dirname}/.env`)})
 
 const logger: Logger = createLogger('config')
 

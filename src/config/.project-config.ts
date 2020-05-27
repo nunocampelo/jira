@@ -1,9 +1,11 @@
-require('dotenv').config()
+import * as path from 'path'
 import { Logger, createLogger } from '@jsincubator/core'
+
+require('dotenv').config({path: path.resolve(`${__dirname}/.env`)})
 
 const logger: Logger = createLogger('config')
 
-if(!process.env.JIRA_USERNAME && !process.env.JIRA_PASSWORD) {
+if (!process.env.JIRA_USERNAME && !process.env.JIRA_PASSWORD) {
     logger.error('missing jira user and/or password check the config section in readme')
     process.exit(1)
 }
@@ -28,7 +30,7 @@ export default {
             startAt: 0,
             maxResults: 200,
             validateQuery: true,
-            fields: undefined 
+            fields: undefined
         }
     },
     team: {
